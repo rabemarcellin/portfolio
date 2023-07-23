@@ -17,13 +17,22 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'aos/dist/aos.css';
 
 /* others */
-import { API_URL } from '../../datas/constants';
 import LineBreak from '../LineBreak';
+
+const API_URL = import.meta.env.VITE_API_URL
+
+console.log(API_URL.concat('/user/me'))
 
 const appLoader = async () => {
     const serverResponse = await fetch(`${API_URL}/user/me`);
 
-    if (!serverResponse.ok) throw Error('error when fetching user');
+    console.log("src/components/App/index.jsx line 27")
+    console.log("server response")
+    console.log(serverResponse)
+
+    if (!serverResponse.ok) {
+        console.error("user fetch")
+    }
 
     const userServer = await serverResponse.json();
 
