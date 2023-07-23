@@ -13,6 +13,8 @@ const CV_URL = process.env.CV_URL;
 const EMAILJS_SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY;
+const ALLOWED_PROD_URL = process.env.ALLOWED_PROD_URL
+const ALLOWED_DEV_URL = process.env.ALLOWED_DEV_URL
 
 const octokit = new Octokit({
     auth: GITHUB_API_TOKEN,
@@ -87,12 +89,7 @@ const emailJSConfig = () => {
 
 app = express();
 
-const allowedOrigins = [
-    'http://localhost:8080',
-    'https://marcellinrabe-portfolio-server.onrender.com',
-    'https://marcellinrabe.github.io',
-    'http://localhost:5173',
-];
+const allowedOrigins = [ALLOWED_DEV_URL, ALLOWED_PROD_URL];
 
 const originMiddleware = (req, res, next) => {
     const host = req.headers.host;
