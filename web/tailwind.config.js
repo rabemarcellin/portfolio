@@ -20,7 +20,11 @@ export default {
                 text: ['Public Sans', 'sans-serif'],
                 'text-lg': ['Poppins', 'sans-serif'],
                 logo: ['Pacifico', 'cursive'],
+                'title': ['Unbounded', 'sans-serif'],
             },
+            backgroundImage: {
+                'ny-anio': "url('./src/assets/nyanio-screenshot.png')"
+            }
         },
     },
     plugins: [require('flowbite/plugin')],
