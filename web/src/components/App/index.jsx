@@ -13,6 +13,7 @@ import { Profile, Project, Skills, Contact } from '../sections';
 import Footer from '../Footer';
 import Service from '../sections/Service';
 import Experience from '../sections/Experience';
+import { ParallaxProvider } from "react-scroll-parallax"
 
 
 export default function App() {
@@ -25,11 +26,13 @@ export default function App() {
 
     return (
 
-        <div className="">
+        <div className="overflow-hidden">
             <div className="bg-dotted">
                 <div className="px-20">
                     <NavBar />
-                    <Profile />
+                    <ParallaxProvider>
+                        <Profile />
+                    </ParallaxProvider>
                     <Skills />
                 </div>
             </div>

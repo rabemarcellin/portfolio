@@ -149,7 +149,7 @@ export default function Contact() {
 
     return (
         <div id="contact" className="">
-<div className="text-center font-title text-3xl mb-4 flex gap-4">
+<div className="text-center font-title text-3xl mb-4 md:flex gap-4">
         <h1>Pour un projet</h1>
                     <TypeAnimation
                         sequence={[

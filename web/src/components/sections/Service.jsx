@@ -33,7 +33,7 @@ export default function Service() {
   ]
  
   return (
-    <div className=''>
+    <div id="service">
         <Slider 
           dots
           autoplay 

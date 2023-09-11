@@ -7,8 +7,8 @@ import curveDownFooter from "../assets/wave-footer-down.svg"
 export default function () {
     return (
         <div id="footer" className="pt-0">
-            <div className='flex justify-center bg-slate-900 text-white'>
-                <div className="flex -rotate-12 bg-slate-900 text-white">
+            <div className='px-10 break-words flex justify-center bg-slate-900 text-white'>
+                <div className="flex bg-slate-900 text-white mt-20">
                     <div className="site-details grid grid-cols-2 md:grid-cols-4 gap-20 leading-10">
                         <div>
                             <span className="font-title text-sm">Contacts</span>
@@ -40,7 +40,7 @@ export default function () {
             <div className="bg-white">
             <ReactSVG src={curveDownFooter} />
 
-            <div className='w-1/2 mx-auto mb-20'>
+            <div className='px-10 md:px-0 md:w-3/4 xl:w-1/2 mx-auto mb-20'>
                 <Contact />
             </div>
 

@@ -6,10 +6,12 @@
     --color-gray: #f3f4f5;
 }
 
+
 @layer base {
     body {
         @apply font-text scroll-smooth select-none;
         background-color:#f3f4f5; 
+        scroll-behavior: smooth;
     }
 
     a {
@@ -36,15 +38,19 @@
         @apply border p-4 rounded-md bg-white;
     }
 
+   
     /* écran avec code */
     .frame {
-        @apply bg-black border-black border-4 rounded-xl h-[400px] w-full shadow-2xl;
+        @apply bg-black h-full border-black border-4 rounded-xl shadow-2xl;
     }
 
     .screen {
-        @apply bg-white border w-full h-full rounded-lg border-black text-sm;
+        @apply border w-full h-full rounded-lg border-black text-sm overflow-hidden bg-gray-900;
     }
 
+    .screen.overflow-x {
+        @apply overflow-x-scroll;
+    }
 
     .menu-bar {
         @apply bg-slate-950 text-white flex justify-between p-1;
@@ -55,7 +61,7 @@
     }
 
     .editor__zone p {
-        @apply my-4;
+        @apply my-4 overflow-auto;
     }
 
     /* react carousel library override */
@@ -88,5 +94,9 @@
 
     .timeline__work--desc {
         @apply text-sm my-4 list-disc list-inside !important;
+    }
+
+    .laptop__table {
+        background-image: url('../../assets/bois.png');
     }
 }
