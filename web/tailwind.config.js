@@ -17,10 +17,14 @@ export default {
                 },
             },
             fontFamily: {
-                text: ['Public Sans', 'sans-serif'],
+                text: ['Lexend', 'sans-serif'],
                 'text-lg': ['Poppins', 'sans-serif'],
                 logo: ['Pacifico', 'cursive'],
+                'title': ['Lexend', 'sans-serif'],
             },
+            backgroundImage: {
+                'ny-anio': "url('./src/assets/nyanio-screenshot.png')"
+            }
         },
     },
     plugins: [require('flowbite/plugin')],

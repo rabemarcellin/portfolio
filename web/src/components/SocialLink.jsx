@@ -23,7 +23,7 @@ export default function SocialLink() {
                 <li key={index + social.href}>
                     <a href={social.href}>
                         {
-                            <social.Component className="text-gray-500 hover:text-gray-800" />
+                            <social.Component className="text-gray-500 hover:text-white transition duration-500 ease-in-out" />
                         }
                     </a>
                 </li>

@@ -36,13 +36,6 @@ const skillsData = [
         name: 'Javascript',
         frequentlyUse: true,
         packagesRelatedLogo: [
-            SiJavascript,
-            FaReact,
-            FaNodeJs,
-            SiExpress,
-            TbBrandReactNative,
-            SiTypescript,
-            SiJquery,
         ],
         skills: [
             'manipulation DOM',
@@ -57,7 +50,7 @@ const skillsData = [
         Logo: FaPhp,
         name: 'PHP 7/8',
         frequentlyUse: true,
-        packagesRelatedLogo: [FaPhp, FaLaravel],
+        packagesRelatedLogo: [],
         skills: [
             ' React / Laravel',
             'programmation modulaire / programmation orientée objet',
@@ -70,10 +63,6 @@ const skillsData = [
         name: 'CSS3',
         frequentlyUse: true,
         packagesRelatedLogo: [
-            SiCsswizardry,
-            FaSass,
-            FaBootstrap,
-            SiTailwindcss,
         ],
         skills: [
             'responsive design',
@@ -87,7 +76,7 @@ const skillsData = [
         Logo: FaPython,
         name: 'Créateur de script',
         frequentlyUse: false,
-        packagesRelatedLogo: [FaPython, SiFastapi, SiC, SiCplusplus],
+        packagesRelatedLogo: [],
         skills: [
             'preference pour les scripts et data programming',
             'interface graphique',
@@ -99,7 +88,7 @@ const skillsData = [
         Logo: TbDatabase,
         name: 'Base des données',
         frequentlyUse: true,
-        packagesRelatedLogo: [SiMysql, SiOracle, SiSqlite],
+        packagesRelatedLogo: [],
         skills: [
             'Gestion de Base des Données Relationnelles (SGBDR) ',
             '<i>MongoDB</i>',

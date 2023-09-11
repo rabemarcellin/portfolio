@@ -1,9 +1,8 @@
-import App, { appLoader } from '../App';
+import App from '../App';
 
 export default [
     {
         path: '/',
         element: <App />,
-        loader: appLoader,
     },
 ];
