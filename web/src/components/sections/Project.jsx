@@ -34,13 +34,12 @@ const ProjectDesc = ({projectName, desc, githubUrl, prodLink}) => {
 
   return (
   <div className="p-4 w-full">
-    <div className='h-[50vh] flex items-center justify-center relative rounded border shadow-md hover:shadow-2xl transition duration-500 ease-in-out w-full p-4 bg-white'
+    <div className='h-[250px] xl:w-[300px] w-full mx-auto flex items-center justify-center relative rounded border shadow-md hover:shadow-2xl transition duration-500 ease-in-out p-4 bg-white'
     >
       <div className='relative z-10 p-2 h-full flex flex-col items-center justify-center'
       onMouseEnter={() => {
         setDropdownVisible(true)
       }}
-      
       onMouseLeave={() => {
         setDropdownVisible(false)
       }}>

@@ -28,8 +28,10 @@ export default function App() {
 
         <div className="overflow-hidden">
             <div className="bg-dotted">
-                <div className="px-20">
+                <div className="px-4">
                     <NavBar />
+                </div>
+                <div className="px-20">
                     <ParallaxProvider>
                         <Profile />
                     </ParallaxProvider>

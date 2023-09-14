@@ -126,7 +126,7 @@ export default function Skills() {
             <div className="mt-40 mb-10 flex flex-col justify-center items-center">
                 <div className="text-center md:flex gap-4 items-center">
                     <h1 className='py-4 md:py-0'>À la recherche d'un développeur web ?</h1>
-                    <a href={cvPdf} target='_blank' className="shadow-xl shadow-gray-400 bg-gray-500 text-white py-2 px-4 active:translate-x-1 text-sm">Télécharger mon CV</a>
+                    <a href={cvPdf} target='_blank' className="shadow-xl shadow-gray-400 bg-gray-500 text-white py-2 px-4 active:translate-x-1 text-sm whitespace-nowrap">Télécharger mon CV</a>
                 </div>
             </div>
             <div className='w-[75vw] mx-auto overflow-hidden'>
@@ -138,7 +138,7 @@ export default function Skills() {
                                     <Marquee autoFill key={columnIndex} direction={columnIndex % 2 === 0 ? "left" : "right"}>
                                         {column.map(({lang, icon}, index) => (
                                         
-                                            <div key={index} className="flex items-center justify-center md:w-[25vw]">
+                                            <div key={index} className="flex items-center justify-center md:w-[300px]">
                                                 <div className='mx-4'>{lang}</div>
                                                 <div>{icon}</div>
                                             </div>

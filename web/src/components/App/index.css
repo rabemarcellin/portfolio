@@ -41,11 +41,11 @@
    
     /* écran avec code */
     .frame {
-        @apply bg-black h-full border-black border-4 rounded-xl shadow-2xl;
+        @apply bg-black h-[75vh] border-black border-4 rounded-xl shadow-2xl ;
     }
 
     .screen {
-        @apply border w-full h-full rounded-lg border-black text-sm overflow-hidden bg-gray-900;
+        @apply border w-full h-full rounded-lg border-black overflow-hidden bg-gray-900;
     }
 
     .screen.overflow-x {
@@ -60,6 +60,9 @@
         @apply bg-slate-800 text-white p-2 grid grid-cols-3;
     }
 
+    .editor__zone {
+        @apply overflow-auto py-2;
+    }
     .editor__zone p {
         @apply my-4 overflow-auto;
     }

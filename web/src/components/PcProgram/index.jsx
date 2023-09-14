@@ -31,7 +31,7 @@ export default function PcProgram({children, overflowX}) {
                             <div><BiWindows size={16} /></div>
                             <div><MdCancel size={16} /></div></div>
                         </div>
-                        <div className="flex gap-2 px-1">
+                        <div className="flex gap-2 px-1 text-white">
                             <div>Fichier</div>
                             <div>Edition</div>
                             <div>Sélection</div>
