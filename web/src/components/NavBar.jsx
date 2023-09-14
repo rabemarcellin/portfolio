@@ -19,14 +19,14 @@ export default function NavBar() {
                         @marcellinrabe
                     </a>
                 </div>
-                <div className="block md:hidden" onClick={() => {
+                <div className="block lg:hidden" onClick={() => {
                     setTimeout(() => {
                         setTogglerStatus(!isTogglerActive)
                     }, 100)
                 }}>
                     <AiOutlineMenu />
                 </div>
-                <div className="hidden md:block md:w-1/2">
+                <div className="hidden lg:block">
                     <div className='flex gap-4 items-center justify-around'>
                         <a href="#skills" className='text-lg'>Compétences</a>
                         <a href="#project" className="text-lg">Réalisations</a>
@@ -36,7 +36,7 @@ export default function NavBar() {
                     </div>
                 </div>
             </header>
-            <div className={`${isTogglerActive ? "": "hidden"} md:hidden rounded-md bg-slate-200 p-2`}>
+            <div className={`${isTogglerActive ? "block": "hidden"} lg:hidden rounded-md bg-slate-200 p-2`}>
                 <div className="my-2">
                     <a href="#skills" className='text-lg hover:underline'>Compétences</a>
                 </div>

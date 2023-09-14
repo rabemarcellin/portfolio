@@ -39,7 +39,7 @@ export default function Service() {
           autoplay 
           infinite 
           arrows={false}
-          autoplaySpeed={10000} 
+          autoplaySpeed={5000} 
           className='m-auto mb-20'
           dotsClass='slick-dots text-white'
         >
