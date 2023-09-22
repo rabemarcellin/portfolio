@@ -8,7 +8,7 @@ const datas = [
     },
     {
         Component: SiGithub,
-        href: 'https://www.github.com/marcellinrabe',
+        href: 'https://www.github.com/rabemarcellin',
     },
     {
         Component: SiFacebook,

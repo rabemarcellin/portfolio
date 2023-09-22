@@ -63,10 +63,11 @@ const ProjectDesc = ({projectName, desc, githubUrl, prodLink}) => {
 export default function Project() {
 
   return (
-    <div id="project" className='bg-dotted'>
+    <div className='bg--gray'>
+<div id="project" className='bg-dotted'>
         <ReactSVG src={bgCurve} />
         <div className='bg--gray'>
-          <div className=' ml-10 mb-20 font-title text-5xl text-cent'>
+          <div className=' ml-10 mb-10 font-title text-5xl'>
               Ayer votre impression sur mes travaux ✨
           </div>
           <div>
@@ -82,16 +83,21 @@ export default function Project() {
                           )
                         )
                       }
-                <div className="text-center h-[25vh] flex flex-col items-center justify-end mt-20">
-                  <h1 className='pb-8'>Voir mes repôts</h1>
-                  <a href="https://github.com/rabemarcellin" target='_blank' className='my-4 bg-dotted p-4 shadow-2xl rounded-full animate-bounce'><FaGithub /></a>
-                </div>
+                
               </div>
-            
           </div>
-          
         </div>
-        <ReactSVG src={bgCurveDown} />
+        <div className="relative">
+          <div className='absolute top-0 left-0 w-full'>
+            <div className="text-center h-[25vh] flex flex-col items-center justify-end mt-20">
+              <h1 className='pb-8'>Voir mes repôts</h1>
+              <a href="https://github.com/rabemarcellin" target='_blank' className='my-4 bg-dotted p-4 shadow-2xl rounded-full animate-bounce'><FaGithub /></a>
+            </div>
+          </div>
+          <ReactSVG src={bgCurveDown} />
+        </div>
       </div>
+    </div>
+    
   )
 }

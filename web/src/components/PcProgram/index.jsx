@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Typewriter from "typewriter-effect"
 import { name, bio, offer } from './data'
-import { MdNetworkWifi3Bar, MdBattery3Bar, MdCancel } from "react-icons/md"
-import { BiVolumeFull, BiWindows, BiSolidMinusCircle } from "react-icons/bi"
+import { MdNetworkWifi3Bar, MdBattery3Bar, MdCancel } from "react-icons/md"
+import { BiVolumeFull, BiWindows, BiSolidMinusCircle } from "react-icons/bi"
 
 export default function PcProgram({children, overflowX}) {
 
@@ -13,7 +13,7 @@ export default function PcProgram({children, overflowX}) {
                     {
                             children ?? (
                                 <>
-                        <div className="menu-bar">
+                        <div className="menu-bar hidden lg:flex">
                             <div>Editeur de texte</div>
                             <div>Aog 31 16:21</div>
                             <div className='flex gap-2 items-center'>
@@ -23,7 +23,7 @@ export default function PcProgram({children, overflowX}) {
                             </div>
                         </div>
                        
-                                <div className='title-bar'>
+                        <div className='title-bar hidden lg:grid'>
                             <div/>
                             <div className='justify-self-center'>presentation.txt</div>
                             <div className='justify-self-end flex gap-2 items-center'>
@@ -31,13 +31,13 @@ export default function PcProgram({children, overflowX}) {
                             <div><BiWindows size={16} /></div>
                             <div><MdCancel size={16} /></div></div>
                         </div>
-                        <div className="flex gap-2 px-1 text-white">
+                        <div className="hidden lg:flex gap-2 px-1 text-white">
                             <div>Fichier</div>
                             <div>Edition</div>
                             <div>Sélection</div>
                         </div>
                         <div className="editor__zone flex-1 bg-slate-200 p-4">
-                            <div className="w-[75vw] pr-10 md:pr-20 md:w-full">
+                            <div className="w-full">
                                 <Typewriter
                                     onInit={typewriter => {
                                         typewriter

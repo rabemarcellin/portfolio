@@ -31,7 +31,7 @@ export default function App() {
                 <div className="px-4">
                     <NavBar />
                 </div>
-                <div className="px-20">
+                <div className="lg:px-20">
                     <ParallaxProvider>
                         <Profile />
                     </ParallaxProvider>
