@@ -123,7 +123,7 @@ export default function Skills() {
     ]
     return (
         <div id="skills">
-            <div className="mt-40 mb-10 flex flex-col justify-center items-center">
+            <div className="mb-10 flex flex-col justify-center items-center">
                 <div className="text-center md:flex gap-4 items-center">
                     <h1 className='py-4 md:py-0'>À la recherche d'un développeur web ?</h1>
                     <a href={cvPdf} target='_blank' className="shadow-xl shadow-gray-400 bg-gray-500 text-white py-2 px-4 active:translate-x-1 text-sm whitespace-nowrap">Télécharger mon CV</a>

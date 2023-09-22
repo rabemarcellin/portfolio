@@ -10,7 +10,7 @@ import { ReactSVG } from 'react-svg';
 export default function Experience() {
   return (
     <div id="experience" className='shadow-lg shadow-white'>
-        <div className="h-[25vh] m-10 flex items-end font-title text-5xl">Expériences profesionnels</div>
+        <div className="m-10 flex items-end font-title text-5xl">Expériences profesionnels</div>
         <VerticalTimeline lineColor='transparent'>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"

@@ -13,22 +13,33 @@ export default function () {
                         <div>
                             <span className="font-title text-sm">Contacts</span>
                             <ul className="p-0 text-gray-400">
-                                <li>034 93 946 98</li>
-                                <li>marcellinr.rabe@gmail.com</li>
+                                <li className='hover:text-white transition duration-300'>038 77 051 95</li>
+                                <li className='hover:text-white transition duration-300'>032 84 133 71</li>
+                                <li>
+                                    <a href="mailto:marcellinr.rabe@gmail.com" className='hover:text-white transition duration-300'>marcellinr.rabe@gmail.com</a>
+                                </li>
                             </ul>
                         </div>
                         <div>
                             <span className="font-title text-sm">En recherche</span>
                             <ul className="p-0 text-gray-400">
-                                <li>alternance</li>
-                                <li>nouvelle opportunité</li>
+                                <li>
+                                    <a href="#contact" className='hover:text-white transition duration-300'>alternance</a>
+                                </li>
+                                <li>
+                                    <a href="#contact" className='hover:text-white transition duration-300'>nouvelle opportunité</a>
+                                </li>
                             </ul>
                         </div>
                         <div>
                             <span className="font-title text-sm">Plateforme social</span>
                             <ul className="p-0 text-gray-400">
-                                <li>Linkedin</li>
-                                <li>Facebook</li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/marcellinrabe/" className='hover:text-white transition duration-300'>Linkedin</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/marcellinr.rabe" className='hover:text-white transition duration-300'>Facebook</a>
+                                </li>
                             </ul>
                         </div>
                         <div className="grid justify-center my-2">
