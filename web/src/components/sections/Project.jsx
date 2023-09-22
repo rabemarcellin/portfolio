@@ -22,10 +22,10 @@ const datas = [
   },
   {
     index: 3,
-    projectName: 'react-page-template',
-    desc: "Un template de landing page d'une application réseau social, faite avec React js et tailwindcss",
-    githubUrl: "https://github.com/rabemarcellin/react-page-template",
-    prodLink: "https://marcellinrabe.github.io/react-page-template",
+    projectName: 'OPartage',
+    desc: "[en cours de développement] Une application web de reseaux sociaux avec une philosophie unique, celle de communiquer et non disputer dans les commentaires.",
+    githubUrl: "https://github.com/rabemarcellin/opartage",
+    prodLink: "https://opartage.netlify.app",
   },
 ]
 
