@@ -23,13 +23,13 @@ const Tag = ({ name, parent, children }) => {
 
 export default function IDE() {
   return (
-    <div className=" flex flex-col bg-zinc-900 overflow-hidden   rounded-tl-3xl text-white w-full max-w-[992px] h-[95vh]">
-      <div className="flex flex-none divide-x p-4 border-b border-zinc-500 bg-zinc-800  first-of-type:ml-0 last-of-type:mr-0">
+    <div className="shadow border-8 border-b-0  border-black flex flex-col bg-zinc-900 overflow-hidden  rounded-t-3xl  text-white w-full max-w-[992px] min-h-[75vh]">
+      {/*  <div className="flex flex-none divide-x p-1 border-b border-zinc-500 bg-zinc-800  first-of-type:ml-0 last-of-type:mr-0">
         <h1 className="font-bold mx-2 ">Projet Presentation</h1>
         <h3 className="px-2 text-sm font-monospace">Fichier</h3>
-      </div>
+      </div> */}
       <div className="flex flex-1">
-        <div className="w-72 border-r border-zinc-500 px-4 flex-none bg-zinc-800">
+        <div className="border-r border-zinc-500 px-4 flex-none bg-zinc-800">
           <div className="flex items-center gap-2 font-bold font-monospace">
             <FaFolder className="w-4" /> Portfolio
           </div>
@@ -39,11 +39,11 @@ export default function IDE() {
             </div>
           </div>
         </div>
-        <div className=" flex overflow-hidden">
-          <div className="flex-none m-1 font-monospace text-gray-500">
+        <div className=" flex overflow-hidden py-1 px-2 font-monospace text-sm leading-6">
+          <div className="flex-none mx-1 max-w-min  text-gray-500">
             {(() => {
               let lineIndicators = [];
-              for (let i = 0; i < 8; ++i) {
+              for (let i = 0; i < 10; ++i) {
                 lineIndicators.push(i + 1);
               }
               return lineIndicators.map((index) => (
@@ -51,7 +51,7 @@ export default function IDE() {
               ));
             })()}
           </div>
-          <div className="flex-1 overflow-y-auto my-1 font-monospace text-sm leading-6">
+          <div className="flex-1 overflow-y-auto">
             <Tag name="nom">RABE Marcellin</Tag>
             <Tag name="poste">Apprenti Développeur web</Tag>
             <Tag name="petit-mot" parent>

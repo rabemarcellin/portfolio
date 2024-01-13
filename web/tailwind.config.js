@@ -19,7 +19,7 @@ export default {
       fontFamily: {
         text: ["Hind", '"DejaVu Sans"', "sans-serif"],
         monospace: ['"Source Code Pro"', "monospace", "serif"],
-        title: ['"Roboto Mono"', "sans-serif"],
+        title: ['"Press Start 2P"', "sans-serif"],
       },
       backgroundImage: {
         "ny-anio": "url('./src/assets/nyanio-screenshot.png')",

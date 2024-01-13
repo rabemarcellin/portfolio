@@ -23,16 +23,17 @@ export default function App() {
   }, []);
 
   return (
-    <div className="overflow-hidden">
-      <div className="bg-dotted">
+    <ParallaxProvider>
+      <div className="overflow-hidden">
         <NavBar />
         <Profile />
+        <Skills />
+        <Project />
+        <Service />
+        <Experience />
+        <Contact />
+        <Footer />
       </div>
-      <Skills />
-      <Project />
-      <Service />
-      <Experience />
-      <Footer />
-    </div>
+    </ParallaxProvider>
   );
 }
