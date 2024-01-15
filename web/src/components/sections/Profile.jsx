@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Marquee from "react-fast-marquee";
 import * as Fa from "react-icons/fa";
 import * as Si from "react-icons/si";
@@ -6,7 +6,6 @@ import IDE from "../IDE";
 import cvPdf from "../../assets/CV.pdf";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import { useParallax } from "react-scroll-parallax";
 
 const columns = [
   [
@@ -50,8 +49,12 @@ const columns = [
 
 export default function Profile() {
   const [init, setInit] = useState(false);
-  const parallaxAnimation = useParallax({
-    translateY: [1, 0.5],
+  const [isMobileView, setMobileView] = useState(false);
+
+  const updateMobileState = useCallback(() => {
+    const screenWidth = window.innerWidth;
+    console.log("screen width", screenWidth);
+    setMobileView(screenWidth <= 992);
   });
 
   useEffect(() => {
@@ -62,6 +65,13 @@ export default function Profile() {
     });
   }, []);
 
+  useEffect(() => {
+    updateMobileState();
+  });
+
+  useEffect(() => {
+    console.log(isMobileView);
+  }, [isMobileView]);
   const particlesLoaded = (container) => null;
 
   const options = useMemo(
@@ -91,7 +101,7 @@ export default function Profile() {
       },
       particles: {
         color: {
-          value: "#000",
+          value: "gray",
         },
         links: {
           color: "#000",
@@ -133,14 +143,14 @@ export default function Profile() {
 
   return (
     <div className="">
-      <div className="bg-zinc-900">
-        <div className="max-w-5xl min-h-screen mx-auto flex items-end overflow-hidden">
-          <div ref={parallaxAnimation.ref} className="max-w-3xl mx-auto">
+      <div className="bg-zinc-900 px-4 md:px-0">
+        <div className="max-w-5xl min-h-[75vh] md:min-h-screen mx-auto flex items-end overflow-hidden">
+          <div className="max-w-3xl mx-auto">
             <IDE />
           </div>
         </div>
       </div>
-      <div className="relative">
+      <div className="relative px-4 md:px-0">
         {init && (
           <Particles
             id="tsparticles"
@@ -149,28 +159,40 @@ export default function Profile() {
             className="absolute top-0 left-0 w-full h-full"
           />
         )}
-        <div className="relative flex min-h-screen items-center mt-10 overflow-hidden max-w-5xl m-auto">
-          <div className="w-2/3">
-            <h1 className="leading-normal hover:drop-shadow-xl transition duration-500 text-5xl text-zinc-800 font-title hover:text-blue-500">
+        <div className="relative lg:flex lg:min-h-screen items-center mt-10 overflow-hidden max-w-5xl m-auto">
+          <div className="lg:w-2/3">
+            <h1 className="leading-normal hover:drop-shadow-xl transition duration-500 text-3xl md:text-5xl text-zinc-800 font-title hover:text-blue-500">
               À la recherche d'un développeur web ?
             </h1>
-            <div className="mt-10">
+            <div className="mt-10 mb-16">
               <a
                 href={cvPdf}
                 target="_blank"
-                className="font-monospace font-bold py-4 px-6  hover:text-gray-300 transition duration-500  bg-gray-500 text-white active:translate-x-1 whitespace-nowrap"
+                className="font-monospace font-bold py-4 px-6 mb-52  hover:text-gray-300 transition duration-500  bg-gray-500 text-white active:translate-x-1 whitespace-nowrap"
               >
                 Télécharger mon CV
               </a>
             </div>
           </div>
-          <div className="w-1/3 flex-none grid grid-cols-2 font-title text-2xl">
+          <div
+            className={`lg:w-1/3 w-full h-full flex-none grid lg:grid-cols-2 font-title text-2xl ${
+              isMobileView ? "" : "-translate-y-10 lg:translate-y-0"
+            }`}
+          >
             {columns.map((column, columnIndex) => {
               return (
                 <Marquee
                   autoFill
                   key={columnIndex}
-                  direction={columnIndex % 2 === 0 ? "up" : "down"}
+                  direction={
+                    columnIndex % 2 === 0
+                      ? isMobileView
+                        ? "left"
+                        : "up"
+                      : isMobileView
+                      ? "right"
+                      : "down"
+                  }
                 >
                   {column.map(({ lang, icon }, index) => (
                     <div key={`${index}-${lang}`} className="p-10 max-x-max">

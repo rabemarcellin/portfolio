@@ -6,7 +6,7 @@ export default function () {
     <div id="footer" className="max-w-5xl mx-auto">
       <div className="px-10 break-words flex justify-center ">
         <div className="flex mt-20">
-          <div className="site-details grid grid-cols-2 md:grid-cols-4 gap-20 leading-10">
+          <div className="site-details md:grid grid-cols-2 md:grid-cols-4 gap-20 leading-10">
             <div>
               <span className="font-title text-sm">Contacts</span>
               <ul className="p-0 text-zinc-900">

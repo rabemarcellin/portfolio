@@ -9,6 +9,7 @@ import {
 import Iframe from "react-iframe";
 import Draggable from "react-draggable"; // The default
 import { motion } from "framer-motion";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import Layout from "react-masonry-list";
 import {
   LinkedInEmbed,
@@ -90,7 +91,6 @@ export default function Project() {
       title: "Top 5 Beginner Level ReactJS Project Ideas!!",
       fromSocial: (
         <FacebookEmbed
-          width="100%"
           height={646}
           url="https://www.facebook.com/ReactJSDevelopers/posts/pfbid0VCpSGG8qhi5ZQr2DV1JD3zA5brsm5i7PZn2zuKZpeJXtNc22RDgwYyCP4Tyw96bHl"
         />
@@ -119,16 +119,8 @@ export default function Project() {
           </Draggable>
         </div>
         <div>
-          {/* <div className="mx-auto w-72 h-72 rounded-full overflow-hidden">
-            <img
-              src={FactoryImg}
-              alt="factory"
-              className="w-full h-full hover:scale-105 transition duration-500"
-            />
-          </div> */}
-
           <PageSection title="projets perso">
-            <div className="pl-10 border-l  flex flex-col">
+            <div className="pl-10 border-l flex flex-col">
               <div className="flex-1">
                 <div className=" overflow-x-auto flex gap-10">
                   <div className="bg-white border w-screen mx-10 flex-none shadow-xl flex divide-x my-10">
@@ -200,53 +192,56 @@ export default function Project() {
         </div>
 
         <PageSection title="Challenge">
-          <p className="font-monospac  text-zinc-900 text-lg">
+          <p className="w-full break-words text-zinc-900">
             Je réalise en application réutilisable des challenges de projet que
             je trouve sur internet
           </p>
 
-          <Layout
-            className="my-4 flex"
-            colCount={2}
-            items={challenges
-              .sort((one, other) => other.finish - one.finish)
-              .map((challenge) => (
-                <div
-                  key={challenge.id}
-                  className="flex flex-col flex-1 border hover:border-blue-300 rounded-xl hover:bg-blue-100 transition duration-500 p-4 pb-0 cursor-pointer"
-                >
-                  <div className="flex gap-1">
-                    <h1 className="text-2xl">{challenge.title}</h1>
-                  </div>
-                  {challenge.fromSocial ? (
-                    <div className="my-4 flex justify-center w-full items-center">
-                      {challenge.fromSocial}
+          <ResponsiveMasonry
+            className="my-10 overflow-hidden"
+            columnsCountBreakPoints={{ 350: 1, 768: 2, 992: 2 }}
+          >
+            <Masonry gutter={20} className="overflow-x-auto">
+              {challenges
+                .sort((one, other) => other.finish - one.finish)
+                .map((challenge) => (
+                  <div
+                    key={challenge.id}
+                    className="md:flex md:flex-col md:flex-1 border hover:border-blue-300 rounded-xl hover:bg-blue-100 transition duration-500 p-4 pb-0 cursor-pointer max-w-max"
+                  >
+                    <div className="flex gap-1">
+                      <h1 className="text-2xl">{challenge.title}</h1>
                     </div>
-                  ) : (
-                    challenge.cover && (
-                      <div className="max-w-[300px] max-h-[500px] mx-auto py-4">
-                        <img
-                          src={challenge.cover}
-                          className="rounded-2xl"
-                          alt="7 react-challenges by aibolik_"
-                        />
+                    {challenge.fromSocial ? (
+                      <div className="my-4 flex justify-center w-full items-center">
+                        {challenge.fromSocial}
                       </div>
-                    )
-                  )}
+                    ) : (
+                      challenge.cover && (
+                        <div className="max-w-[300px] max-h-[500px] mx-auto py-4">
+                          <img
+                            src={challenge.cover}
+                            className="rounded-2xl"
+                            alt="7 react-challenges by aibolik_"
+                          />
+                        </div>
+                      )
+                    )}
 
-                  <div className="flex justify-between items-center border-t mt-2">
-                    <aside className="text-lg font-bold font-monospace">
-                      {challenge.finish
-                        ? `${challenge.finish}/${challenge.total}`
-                        : "à suivre"}
-                    </aside>
-                    <div className="flex gap-8">
-                      <FaLink className="w-4" />
+                    <div className="flex justify-between items-center border-t mt-2">
+                      <aside className="text-lg font-bold font-monospace">
+                        {challenge.finish
+                          ? `${challenge.finish}/${challenge.total}`
+                          : "à suivre"}
+                      </aside>
+                      <div className="flex gap-8">
+                        <FaLink className="w-4" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-          />
+                ))}
+            </Masonry>
+          </ResponsiveMasonry>
         </PageSection>
 
         <div className="relative">

@@ -4,11 +4,9 @@ import { SiJavascript, SiRedux } from "react-icons/si";
 import { AnimatePresence, motion } from "framer-motion";
 import ReactRouterCode from "../../assets/codebase/react-router.png";
 import StoreReduxCode from "../../assets/codebase/store-redux.png";
-import Layout from "react-masonry-list";
-
-import { TwitterEmbed } from "react-social-media-embed";
-import ReactChallengesImg from "../../assets/challenges/react-challenges.png";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import PageSection from "./PageSection";
+
 const codeDemos = [
   {
     id: 0,
@@ -98,38 +96,38 @@ export default function Skills() {
   return (
     <div id="skills" className="max-w-5xl mx-auto">
       <PageSection title="Techno">
-        <Layout
-          className="my-10 flex"
-          colCount={2}
-          items={challenges.map((challenge) => (
-            <div
-              key={challenge.id}
-              onMouseEnter={() => setSkillId(challenge.id)}
-              onMouseLeave={() => setSkillId(null)}
-              className="flex-1 border hover:border-blue-300 rounded-xl  transition duration-500 p-4  cursor-pointer"
-            >
-              <div className="flex gap-1">
-                <h1 className="text-2xl">{challenge.title}</h1>
-              </div>
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+          <Masonry gutter={20}>
+            {challenges.map((challenge) => (
               <div
-                className={`
+                key={challenge.id}
+                onMouseEnter={() => setSkillId(challenge.id)}
+                onMouseLeave={() => setSkillId(null)}
+                className="flex-1 border hover:border-blue-300 rounded-xl  transition duration-500 p-4  cursor-pointer"
+              >
+                <div className="flex gap-1">
+                  <h1 className="text-2xl">{challenge.title}</h1>
+                </div>
+                <div
+                  className={`
               transition-all duration-500
               ${
                 skillId === challenge.id ? "border-l pl-4" : "border-none p-0"
               } font-monospace font-bold text-zinc-900`}
-              >
-                <ul className="">
-                  {challenge.tech &&
-                    challenge.tech.map((tech) => (
-                      <li key={`tech-${tech}fdsfsd`} className="my-4">
-                        {tech}
-                      </li>
-                    ))}
-                </ul>
+                >
+                  <ul className="">
+                    {challenge.tech &&
+                      challenge.tech.map((tech) => (
+                        <li key={`tech-${tech}fdsfsd`} className="my-4">
+                          {tech}
+                        </li>
+                      ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-          ))}
-        />
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
       </PageSection>
       {currentDemo && (
         <PageSection title="Quelques solutions que je peux apporter">

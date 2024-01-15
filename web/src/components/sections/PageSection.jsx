@@ -4,12 +4,12 @@ export default function PageSection({ title, children }) {
   const [isHover, setIsHover] = useState(false);
   return (
     <div
-      className="max-w-5xl mx-auto mb-10"
+      className="max-w-5xl mx-auto mb-10 px-4"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
       <h1
-        className={`mb-8 font-title max-w-max  text-3xl transition duration-500 ${
+        className={`mb-8 font-title max-w-max  text-2xl md:text-3xl transition duration-500 ${
           isHover ? "text-blue-500 translate-y-1 translate-x-1" : ""
         }`}
       >

@@ -28,7 +28,7 @@
 
 @layer base {
   body {
-    @apply font-text scroll-smooth select-none;
+    @apply font-text scroll-smooth select-none text-sm md:text-base;
     scroll-behavior: smooth;
   }
 

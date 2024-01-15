@@ -10,7 +10,7 @@ export default function NavBar() {
     };
   }, []);
   return (
-    <div className=" bg-zinc-900 text-white">
+    <div className="px-4 md:px-0 bg-zinc-900 text-white">
       <div className="max-w-5xl mx-auto">
         <header className="flex items-center justify-between py-4">
           <div>
@@ -43,8 +43,8 @@ export default function NavBar() {
         </header>
         <div
           className={`${
-            isTogglerActive ? "block" : "hidden"
-          } lg:hidden rounded-md bg-slate-200 p-2`}
+            isTogglerActive ? " scale-1 w-full" : "scale-y-0 h-0"
+          } transition-all duration-500 origin-bottom lg:hidden rounded-md bg-slate-200 text-zinc-900 p-2`}
         >
           <div className="my-2 hover:underline">
             <a href="#skills" className="">
