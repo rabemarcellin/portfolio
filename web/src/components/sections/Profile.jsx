@@ -143,7 +143,7 @@ export default function Profile() {
 
   return (
     <div className="">
-      <div className="bg-zinc-900 px-4 md:px-0">
+      <div className="bg-blue-400 px-4 md:px-0">
         <div className="max-w-5xl min-h-[75vh] md:min-h-screen mx-auto flex items-end overflow-hidden">
           <div className="max-w-3xl mx-auto">
             <IDE />

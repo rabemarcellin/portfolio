@@ -10,7 +10,7 @@ export default function NavBar() {
     };
   }, []);
   return (
-    <div className="px-4 md:px-0 bg-zinc-900 text-white">
+    <div className="px-4 md:px-0 bg-blue-400 text-white">
       <div className="max-w-5xl mx-auto">
         <header className="flex items-center justify-between py-4">
           <div>
