@@ -43,8 +43,8 @@ export default function NavBar() {
         </header>
         <div
           className={`${
-            isTogglerActive ? " scale-1 w-full" : "scale-y-0 h-0"
-          } transition-all duration-500 origin-bottom lg:hidden rounded-md bg-slate-200 text-zinc-900 p-2`}
+            isTogglerActive ? "border-b rounded-0" : "hidden"
+          } transition-all duration-500 origin-bottom lg:hidden p-2`}
         >
           <div className="my-2 hover:underline">
             <a href="#skills" className="">

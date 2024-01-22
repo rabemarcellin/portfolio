@@ -124,7 +124,7 @@ export default function Profile() {
           density: {
             enable: true,
           },
-          value: 80,
+          value: 30,
         },
         opacity: {
           value: 0.5,
