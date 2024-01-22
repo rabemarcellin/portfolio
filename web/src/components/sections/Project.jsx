@@ -30,28 +30,25 @@ const demosData = [
 
 const Demo = ({ projectName, description, url, key }) => {
   return (
-    <div className="m-10 mb-32">
-      <div className="my-4 flex flex-col justify-center items-center">
+    <div className="md:m-10 mb-32 ">
+      <div className="my-4 md:flex flex-col justify-center items-center">
         <h1 className="font-bold text-3xl font-monospace drop-shadow-xl">
           {projectName}
         </h1>
-        <p>{description}</p>
+        <p className="">{description}</p>
       </div>
-      <div className="flex-1">
-        <div className="border rounded-lg flex relative transition-all duration-500 before:transition-all before:duration-500 hover:shadow">
-          <div className="z-10 flex-1 bg-white h-[75vh] overflow-hidden rounded-lg">
-            <div className="border-b">
-              <div className="m-4 text-center text-sm p-2 rounded-3xl text-gray-500 font-bold bg-gray-300">
-                {url}
-              </div>
+      <div className="border bg-white rounded-lg relative transition-all duration-500 hover:shadow">
+        <div className="bg-white w-full h-[75vh] rounded-lg overflow-hidden">
+          <div className="border-b">
+            <div className="m-4 text-center text-sm p-2 rounded-3xl text-gray-500 font-bold bg-gray-300">
+              {url}
             </div>
-            <Iframe
-              url={url}
-              id={key}
-              className="w-full h-full overflow-y-scroll"
-              display="block"
-            />
           </div>
+          <Iframe
+            url={url}
+            id={key}
+            className="w-full h-full overflow-scroll"
+          />
         </div>
       </div>
     </div>
@@ -90,7 +87,7 @@ export default function Project() {
   ];
 
   return (
-    <div id="project" className="flex flex-wrap gap-10">
+    <div id="project">
       <div className="max-w-5xl mx-auto relative p-8">
         <div>
           <Draggable axis="y">
@@ -113,13 +110,13 @@ export default function Project() {
             je trouve sur internet
           </p>
 
-          <div className="grid md:grid-cols-2 my-4 gap-4">
+          <div className="md:grid md:grid-cols-2 my-4 gap-4">
             {challenges
               .sort((one, other) => other.finish - one.finish)
               .map((challenge) => (
                 <div
                   key={challenge.id}
-                  className="md:flex bg-white h-fit md:flex-col md:flex-1 border hover:border-blue-300 rounded-xl hover:bg-blue-100 transition duration-500 p-4 pb-0 cursor-pointer"
+                  className="mb-4 md:mb-0 md:flex bg-white h-fit md:flex-col md:flex-1 border hover:border-blue-300 rounded-xl hover:bg-blue-100 transition duration-500 p-4 pb-0 cursor-pointer"
                 >
                   <div className="flex gap-1">
                     <h1 className="text-2xl break-words font-bold">
