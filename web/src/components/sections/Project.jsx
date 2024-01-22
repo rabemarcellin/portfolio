@@ -1,83 +1,64 @@
 import React, { useState } from "react";
-import {
-  FaCheck,
-  FaCode,
-  FaGithub,
-  FaLink,
-  FaAngleDoubleDown,
-} from "react-icons/fa";
+import { FaGithub, FaLink, FaAngleDoubleDown } from "react-icons/fa";
 import Iframe from "react-iframe";
 import Draggable from "react-draggable"; // The default
-import { motion } from "framer-motion";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import Layout from "react-masonry-list";
-import {
-  LinkedInEmbed,
-  TwitterEmbed,
-  FacebookEmbed,
-} from "react-social-media-embed";
+import { FacebookEmbed } from "react-social-media-embed";
 import PageSection from "./PageSection";
-import FactoryImg from "../../assets/animations/factory.jpg";
 import ReactChallengesImg from "../../assets/challenges/react-challenges.png";
 import NodejsProjectImg from "../../assets/challenges/nodejs-project-ideas.jpg";
 
-const datas = [
+const demosData = [
   {
-    index: 1,
-    projectName: "ny-anio",
-    desc: "Application gestion des tâches faite avec Reactjs et Redux, tailwindcss.",
-    githubUrl: "https://github.com/rabemarcellin/ny-anio",
-    prodLink: "https://nyanio.netlify.app",
+    key: "demo46fs-fsfe4fd",
+    projectName: "Toast API",
+    description: `Composant notification qui s'affiche temporairement à l'écran de l'utilisateur.`,
+    url: "http://toast-api.onrender.com",
   },
   {
-    index: 2,
-    projectName: "didy-folo",
-    desc: "Site vitrine dix-commandements de Dieu.",
-    githubUrl: "https://github.com/rabemarcellin/didy-folo",
-    prodLink: "https://marcellinrabe.github.io/didy-folo",
+    key: "demo898dqsfs-rzerze",
+    projectName: "Ny Anio",
+    description: `Application gestion des tâches faite avec Reactjs et Redux tailwindcss.`,
+    url: "http://nyanio.netlify.app",
   },
   {
-    index: 3,
-    projectName: "OPartage",
-    desc: "[en cours de développement] Une application web de reseaux sociaux avec une philosophie unique, celle de communiquer et non disputer dans les commentaires.",
-    githubUrl: "https://github.com/rabemarcellin/opartage",
-    prodLink: "https://opartage.netlify.app",
+    key: "dem89fds4-fdsfs45",
+    projectName: "Didy Folo",
+    description: `Site vitrine des 10 commandements de Dieu.`,
+    url: "http://marcellinrabe.github.io/didy-folo",
   },
 ];
 
+const Demo = ({ projectName, description, url, key }) => {
+  return (
+    <div className="m-10 mb-32">
+      <div className="my-4 flex flex-col justify-center items-center">
+        <h1 className="font-bold text-3xl font-monospace drop-shadow-xl">
+          {projectName}
+        </h1>
+        <p>{description}</p>
+      </div>
+      <div className="flex-1">
+        <div className="border rounded-lg flex relative transition-all duration-500 before:transition-all before:duration-500 hover:shadow">
+          <div className="z-10 flex-1 bg-white h-[75vh] overflow-hidden rounded-lg">
+            <div className="border-b">
+              <div className="m-4 text-center text-sm p-2 rounded-3xl text-gray-500 font-bold bg-gray-300">
+                {url}
+              </div>
+            </div>
+            <Iframe
+              url={url}
+              id={key}
+              className="w-full h-full overflow-y-scroll"
+              display="block"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function Project() {
-  const projectsCategories = [
-    {
-      key: 0,
-      type: "Personnel",
-      desc: `Mes projets personnels`,
-    },
-  ];
-
-  const categoriesNames = projectsCategories.map((project) => project.type);
-
-  const [projectActive, setActive] = useState(projectsCategories[0]);
-
-  const cardVariants = {
-    offscreen: {
-      y: -100,
-    },
-    onscreen: {
-      x: 0,
-      y: 0,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 2,
-      },
-    },
-  };
-  const styles = {
-    projectCategory: "font-bold hover:underline mb-2",
-    categoryActive: "text-yellow-500",
-    categoryDisable: "",
-  };
-
   const challenges = [
     {
       id: "challenge-2",
@@ -119,75 +100,10 @@ export default function Project() {
           </Draggable>
         </div>
         <div>
-          <PageSection title="projets perso">
-            <div className="pl-10 border-l flex flex-col">
-              <div className="flex-1">
-                <div className=" overflow-x-auto flex gap-10">
-                  <div className="bg-white border w-screen mx-10 flex-none shadow-xl flex divide-x my-10">
-                    <div className="p-4  w-80">
-                      <h1 className="font-bold">Toast API</h1>
-                      <p className="text-sm">
-                        Composant notification qui s'affiche temporairement à
-                        l'écran de l'utilisateur.
-                      </p>
-                    </div>
-                    <div className="flex-1">
-                      <Iframe
-                        url="http://toast-api.onrender.com"
-                        id=""
-                        className="w-full h-screen"
-                        display="block"
-                        position="relative"
-                      />
-                    </div>
-                  </div>
-                  <motion.div
-                    initial="offscreen"
-                    whileInView="onscreen"
-                    viewport={{ once: true }}
-                    variants={cardVariants}
-                  >
-                    <div className="bg-white shadow-xl w-screen mx-10 flex-none flex divide-x my-10">
-                      <div className="p-4  w-80">
-                        <h1 className="font-bold">Ny Anio</h1>
-                        <p className="text-sm">
-                          Application gestion des tâches faite avec Reactjs et
-                          Redux, tailwindcss
-                        </p>
-                      </div>
-                      <div className="flex-1">
-                        <Iframe
-                          url="http://nyanio.netlify.app"
-                          id=""
-                          className="w-full h-screen"
-                          display="block"
-                          position="relative"
-                        />
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  <div className="bg-white shadow-xl w-screen mx-10 flex flex-none divide-x my-10">
-                    <div className="p-4  w-80">
-                      <h1 className="font-bold">Ny Anio</h1>
-                      <p className="text-sm">
-                        Application gestion des tâches faite avec Reactjs et
-                        Redux, tailwindcss
-                      </p>
-                    </div>
-                    <div className="flex-1">
-                      <Iframe
-                        url="http://marcellinrabe.github.io/didy-folo"
-                        id=""
-                        className="w-full h-screen"
-                        display="block"
-                        position="relative"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <PageSection title="Projets perso">
+            {demosData.map((demo) => (
+              <Demo {...demo} />
+            ))}
           </PageSection>
         </div>
 
@@ -197,51 +113,48 @@ export default function Project() {
             je trouve sur internet
           </p>
 
-          <ResponsiveMasonry
-            className="my-10 overflow-hidden"
-            columnsCountBreakPoints={{ 350: 1, 768: 2, 992: 2 }}
-          >
-            <Masonry gutter={20} className="overflow-x-auto">
-              {challenges
-                .sort((one, other) => other.finish - one.finish)
-                .map((challenge) => (
-                  <div
-                    key={challenge.id}
-                    className="md:flex md:flex-col md:flex-1 border hover:border-blue-300 rounded-xl hover:bg-blue-100 transition duration-500 p-4 pb-0 cursor-pointer max-w-max"
-                  >
-                    <div className="flex gap-1">
-                      <h1 className="text-2xl">{challenge.title}</h1>
+          <div className="grid md:grid-cols-2 my-4 gap-4">
+            {challenges
+              .sort((one, other) => other.finish - one.finish)
+              .map((challenge) => (
+                <div
+                  key={challenge.id}
+                  className="md:flex bg-white h-fit md:flex-col md:flex-1 border hover:border-blue-300 rounded-xl hover:bg-blue-100 transition duration-500 p-4 pb-0 cursor-pointer"
+                >
+                  <div className="flex gap-1">
+                    <h1 className="text-2xl break-words font-bold">
+                      {challenge.title}
+                    </h1>
+                  </div>
+                  {challenge.fromSocial ? (
+                    <div className="my-4 flex justify-center w-full items-center">
+                      {challenge.fromSocial}
                     </div>
-                    {challenge.fromSocial ? (
-                      <div className="my-4 flex justify-center w-full items-center">
-                        {challenge.fromSocial}
+                  ) : (
+                    challenge.cover && (
+                      <div className="max-w-[300px] max-h-[500px] mx-auto py-4">
+                        <img
+                          src={challenge.cover}
+                          className="rounded-2xl"
+                          alt="7 react-challenges by aibolik_"
+                        />
                       </div>
-                    ) : (
-                      challenge.cover && (
-                        <div className="max-w-[300px] max-h-[500px] mx-auto py-4">
-                          <img
-                            src={challenge.cover}
-                            className="rounded-2xl"
-                            alt="7 react-challenges by aibolik_"
-                          />
-                        </div>
-                      )
-                    )}
+                    )
+                  )}
 
-                    <div className="flex justify-between items-center border-t mt-2">
-                      <aside className="text-lg font-bold font-monospace">
-                        {challenge.finish
-                          ? `${challenge.finish}/${challenge.total}`
-                          : "à suivre"}
-                      </aside>
-                      <div className="flex gap-8">
-                        <FaLink className="w-4" />
-                      </div>
+                  <div className="flex justify-between items-center border-t mt-2">
+                    <aside className="text-lg font-bold font-monospace">
+                      {challenge.finish
+                        ? `${challenge.finish}/${challenge.total}`
+                        : "à suivre"}
+                    </aside>
+                    <div className="flex gap-8">
+                      <FaLink className="w-4" />
                     </div>
                   </div>
-                ))}
-            </Masonry>
-          </ResponsiveMasonry>
+                </div>
+              ))}
+          </div>
         </PageSection>
 
         <div className="relative">

@@ -14,13 +14,12 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { BsDoorOpen } from "react-icons/bs";
-import { ReactSVG } from "react-svg";
 import PageSection from "./PageSection";
 
 export default function Experience() {
   return (
     <PageSection title="Experiences pro">
-      <div id="experience" className="shadow-lg shadow-white">
+      <div id="experience" className="">
         <VerticalTimeline lineColor="transparent">
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
@@ -44,13 +43,13 @@ export default function Experience() {
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
             icon={<FaReact />}
           >
-            <h3 className="vertical-timeline-element-title font-title text-gray-500 text-sm">
+            <h3 className="vertical-timeline-element-title font-monospace text-gray-500 text-sm">
               Développeur React
             </h3>
             <h4 className="vertical-timeline-element-subtitle text-sm">
               LCOM Corporation
             </h4>
-            <p className="flex gap-4 font-title text-gray-500 items-center">
+            <p className="flex gap-4 font-monospace text-gray-500 items-center">
               React <FaReact />
               Redux <SiRedux />
             </p>
@@ -64,10 +63,10 @@ export default function Experience() {
             icon={<SiCsswizardry />}
           >
             <div className="flex justify-between items-center">
-              <h3 className="vertical-timeline-element-title font-title text-gray-500 text-sm">
+              <h3 className="vertical-timeline-element-title font-monospace text-gray-500 text-sm">
                 Intégrateur web
               </h3>
-              <h4 className="vertical-timeline-element-subtitle font-title text-sm">
+              <h4 className="vertical-timeline-element-subtitle font-monospace text-sm">
                 Alternance
               </h4>
             </div>
@@ -80,7 +79,7 @@ export default function Experience() {
                 boostrap
               </li>
             </ul>
-            <div className="text-sm flex gap-4 font-title text-gray-500 items-center">
+            <div className="text-sm flex gap-4 font-monospace text-gray-500 items-center">
               <FaHtml5 />
               <SiCsswizardry />
               boostrap <FaBootstrap />
@@ -95,10 +94,10 @@ export default function Experience() {
             icon={<FaRegFileCode />}
           >
             <div className="flex justify-between items-center">
-              <h3 className="vertical-timeline-element-title font-title text-gray-500 text-sm">
+              <h3 className="vertical-timeline-element-title font-monospace text-gray-500 text-sm">
                 Stagiaire
               </h3>
-              <h4 className="vertical-timeline-element-subtitle font-title text-sm">
+              <h4 className="vertical-timeline-element-subtitle font-monospace text-sm">
                 Stage de découverte
               </h4>
             </div>
@@ -111,7 +110,7 @@ export default function Experience() {
                 du web, à savoir html/css
               </li>
             </ul>
-            <div className="text-sm flex gap-4 font-title text-gray-500 items-center">
+            <div className="text-sm flex gap-4 font-monospace text-gray-500 items-center">
               <FaHtml5 />
               <SiCsswizardry />
               Algorithmes <FaRegFileCode />

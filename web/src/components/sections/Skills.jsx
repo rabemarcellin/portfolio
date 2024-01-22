@@ -29,7 +29,7 @@ const SkillItem = ({ main, alias }) => {
       {alias ? (
         <span className="text-gray-500">{alias}</span>
       ) : (
-        <span>{"_"}</span>
+        <span>{""}</span>
       )}
     </span>
   );
@@ -103,17 +103,17 @@ export default function Skills() {
                 key={challenge.id}
                 onMouseEnter={() => setSkillId(challenge.id)}
                 onMouseLeave={() => setSkillId(null)}
-                className="flex-1 border hover:border-blue-300 rounded-xl  transition duration-500 p-4  cursor-pointer"
+                className="flex-1 border bg-white hover:border-blue-300 rounded-xl  transition duration-500 p-4  cursor-pointer"
               >
                 <div className="flex gap-1">
-                  <h1 className="text-2xl">{challenge.title}</h1>
+                  <h1 className="text-2xl font-bold">{challenge.title}</h1>
                 </div>
                 <div
                   className={`
               transition-all duration-500
               ${
                 skillId === challenge.id ? "border-l pl-4" : "border-none p-0"
-              } font-monospace font-bold text-zinc-900`}
+              } font-monospace text-zinc-900`}
                 >
                   <ul className="">
                     {challenge.tech &&
@@ -131,8 +131,8 @@ export default function Skills() {
       </PageSection>
       {currentDemo && (
         <PageSection title="Quelques solutions que je peux apporter">
-          <div className=" hover:bg-blue-100 overflow-hidden transition duration-500 flex max-w-5xl mx-auto">
-            <div className="mx-auto w-1/2 px-8">
+          <div className=" hover:bg-white rounded-t-lg md:rounded-l-lg md:rounded-tr-none overflow-hidden transition duration-500 md:flex max-w-5xl mx-auto">
+            <div className="md:mx-auto md:w-1/2 px-4 pb-4 md:px-8">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`demo-code__details${currentDemo.id}fdsfmzrr`}
@@ -140,10 +140,10 @@ export default function Skills() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1 }}
                 >
-                  <h1 className="text-lg font-monospace font-bold text-zinc-700  break-words py-4">
+                  <h1 className="text-lg font-bold text-zinc-700  break-words py-4">
                     {currentDemo.title}
                   </h1>
-                  <p className="mt-4 flex gap-8">
+                  <p className="md:mt-4 flex gap-8">
                     {currentDemo.icons &&
                       currentDemo.icons.length > 0 &&
                       currentDemo.icons.map((Icon) => (
@@ -153,7 +153,7 @@ export default function Skills() {
                 </motion.div>
               </AnimatePresence>
             </div>
-            <div className="w-1/2">
+            <div className="md:w-1/2">
               <div className="overflow-hidden">
                 <AnimatePresence>
                   <motion.img

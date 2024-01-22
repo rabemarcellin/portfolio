@@ -168,7 +168,7 @@ export default function Profile() {
               <a
                 href={cvPdf}
                 target="_blank"
-                className="font-monospace font-bold py-4 px-6 mb-52  hover:text-gray-300 transition duration-500  bg-gray-500 text-white active:translate-x-1 whitespace-nowrap"
+                className="font-bold py-2 px-6 mb-52  hover:text-zinc-900 hover:bg-white hover:border hover:border-zinc-900 transition duration-500  bg-blue-500 text-white active:translate-x-1 whitespace-nowrap"
               >
                 Télécharger mon CV
               </a>
