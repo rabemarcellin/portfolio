@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::root {
+  --color-gray: #f3f4f5;
+}
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+  body {
+    @apply font-text select-none text-sm md:text-base bg-gray-100;
+    scroll-behavior: smooth;
+  }
+  a {
+    @apply text-current no-underline;
+  }
+}
+
+@layer components {
+  .bg--gray {
+    background-color: #f3f4f5;
+  }
+
+  .bg-dotted {
+    @apply transition-all;
+    background-color: #fff;
+    background-image: radial-gradient(
+      #e8e1e1 1.9500000000000002px,
+      #fff 1.9500000000000002px
+    );
+    background-size: 39px 39px;
+  }
+  .carousel.carousel--container {
+    @apply relative w-full h-full md:flex hidden justify-center align-middle;
+  }
+
+  .carousel.carousel--card {
+    @apply border p-4 rounded-md bg-white;
+  }
+
+  /* écran avec code */
+  .frame {
+    @apply bg-black h-[75vh] border-black border-4 rounded-xl shadow-2xl;
+  }
+
+  .screen {
+    @apply border w-full h-full rounded-lg border-black overflow-hidden bg-gray-900;
+  }
+
+  .screen.overflow-x {
+    @apply overflow-x-scroll;
+  }
+
+  .menu-bar {
+    @apply bg-slate-950 text-white flex justify-between p-1;
+  }
+
+  .title-bar {
+    @apply bg-slate-800 text-white p-2 grid grid-cols-3;
+  }
+
+  .editor__zone {
+    @apply overflow-auto py-2;
+  }
+  .editor__zone p {
+    @apply my-4 overflow-auto;
+  }
+
+  /* react carousel library override */
+  .carousel__item {
+    @apply flex flex-col justify-center items-center text-center h-[50vh] bg--gray bg-dotted mb-8 transition ease-in-out !important;
+  }
+
+  .slick-dots li.slick-active button::before {
+    @apply bg-slate-400 text-slate-400 !important;
+  }
+
+  .slick-dots li button::before {
+    @apply shadow-lg shadow-black rounded bg-white text-white !important;
+  }
+
+  /* video player library override */
+  .react-player {
+    @apply w-full rounded-xl !important;
+  }
+
+  .overlay-bg {
+    background-color: rgba(255, 255, 255, 0.6);
+    @apply absolute top-0 left-0 w-full h-96;
+  }
+
+  /* timeline custom style */
+  .timeline__date {
+    @apply text-base !important;
+  }
+
+  .timeline__work--desc {
+    @apply text-sm my-4 list-disc list-inside !important;
+  }
+
+  .laptop__table {
+    background-image: url("../../assets/bois.png");
+  }
+}

@@ -17,9 +17,9 @@ export default {
         },
       },
       fontFamily: {
-        text: ["Hind", '"DejaVu Sans"', "sans-serif"],
-        monospace: ['"Source Code Pro"', "monospace", "serif"],
-        title: ['"Press Start 2P"', "sans-serif"],
+        text: [ ' "PT Serif"', "serif"],
+        monospace: ['"Source Code Pro"', "monospace"],
+        title: ['"Yantramanav"', "sans-serif"],
       },
       backgroundImage: {
         "ny-anio": "url('./src/assets/nyanio-screenshot.png')",
