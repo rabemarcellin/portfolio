@@ -1,13 +1,12 @@
 /* Package components */
-import "react-toastify/dist/ReactToastify.css";
-import "./App.css";
 /* Custom components */
+import { useContext, useEffect, useState } from "react";
+import AppContext from "../contexts/AppContext";
 import NavBar from "../sections/Navbar";
 import { Profile, Project, Skills  } from "../sections";
 import Footer from "../sections/Footer";
 import Service from "../sections/Service";
-import { useContext, useEffect, useState } from "react";
-import AppContext from "../contexts/AppContext";
+import "./App.css";
 
 export default function App() {
   const [theme, setTheme] = useState('light')

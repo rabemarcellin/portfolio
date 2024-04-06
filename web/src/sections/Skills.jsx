@@ -53,7 +53,7 @@ export default function Skills() {
             <ResponsiveMasonry columnsCountBreakPoints={{320: 1, 576: 2, 768: 3}}>       
               <Masonry>
                 {techs.map(tech => (
-                  <li className="language__item">
+                  <li key={`tech-${tech.mainTech}`} className="language__item">
                     <div className="flex gap-4 items-center">
                       <div className="">
                         <ShowIcon name={tech.icon} className={`p-2 shadow ${tech.colorAsClass}`} />

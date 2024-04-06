@@ -1,5 +1,5 @@
 /* Package components */
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import { BsSend } from "react-icons/bs";
@@ -196,7 +196,7 @@ export default function Contact() {
                   id="message"
                   name="message"
                   className="contact__input contact__input--textarea"
-                                   placeholder={t("client-message-placeholder")}
+                  placeholder={t("client-message-placeholder")}
                   value={formState.inputs.message}
                   onChange={updateInput}
                 ></textarea>

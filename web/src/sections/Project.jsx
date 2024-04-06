@@ -18,8 +18,8 @@ export default function Project() {
         <div className="project__dashboard">
           <div className="project__dashboard__table">
             {softwareLifeCycle.map(step => (
-            <div>
-              <div key={`software-life-cycle-${step.name}`} className="backdrop-blur z-50  overflow-hidden whitespace-nowrap text-center p-2 opacity-50">
+            <div key={`software-life-cycle-${step.name}`}>
+              <div className="backdrop-blur z-50  overflow-hidden whitespace-nowrap text-center p-2 opacity-50">
                 {t(step.name)}
               </div>
               <div className="flex justify-center">
@@ -34,7 +34,7 @@ export default function Project() {
               <div key={`project-table-item-${project.name}`} 
                 className='project__card'
                  onMouseEnter={() => setSelectedProject(project)}
-                 onMouseLeave={() => selectedProject(null)}
+                 onMouseLeave={() => setSelectedProject(null)}
                  style={{
                   transform: `translateX(${(14.2*(selectedProject === project ? 1 : project.status)) - 14.2}%)`
                 }}
