@@ -45,7 +45,10 @@
             "email-address": "Adiresy mailaka",
             "client-name": "Anarana",
             "message-object": "Lohahevitra",
-            "client-message-placeholder": "Miarahaba Marcellin,"
+            "client-message-placeholder": "Miarahaba Marcellin,",
+
+            "download-my-cv": "Hitahiry ny CV-ko."
+
         }
     },
     "fr": {
@@ -93,7 +96,9 @@
             "email-address": "Adresse e-mail",
             "client-name": "Nom",
             "message-object": "Objet",
-            "client-message-placeholder": "Salut Marcellin,"
+            "client-message-placeholder": "Salut Marcellin,",
+
+            "download-my-cv": "Télécharger mon CV"
        }
     },
     "en": {
@@ -141,7 +146,9 @@
             "email-address": "E-mail",
             "client-name": "Name",
             "message-object": "Object",
-            "client-message-placeholder": "Hello Marcellin,"
+            "client-message-placeholder": "Hello Marcellin,",
+
+            "download-my-cv": "Download my CV"
         }
     }
 

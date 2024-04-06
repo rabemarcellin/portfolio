@@ -1,5 +1,4 @@
 import { ReactSVG } from "react-svg";
-import cvPdf from "../assets/CV.pdf";
 import MeAsImg from '../assets/me-transparent.png'
 import BlobSvg from '../assets/blob.svg'
 import Linked from "../components/Linked";

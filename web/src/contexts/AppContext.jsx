@@ -11,8 +11,8 @@ export const AppProvider = () => {
     const [navbarHeight, setNavbarHeight] = useState(null)
 
     const toggleDarkMode = (checked) => {
-        localStorage.setItem('theme', checked)
         setDarkMode(checked);
+        localStorage.setItem('theme', checked)
       };
 
     const value = {

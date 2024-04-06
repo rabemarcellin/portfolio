@@ -76,6 +76,7 @@ export default function NavBar() {
             </nav>
           </div>
         </header>
+        
         <div
           className={`${isTogglerActive ? "border-b rounded-0" : "hidden"} 
             transition-all duration-500 origin-bottom md:hidden  absolute top-0 left-0 w-screen h-screen 

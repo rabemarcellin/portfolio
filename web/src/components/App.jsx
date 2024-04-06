@@ -13,8 +13,10 @@ export default function App() {
   const { isDarkMode } = useContext(AppContext)
   
   useEffect(() => {
-    setTheme(isDarkMode ? 'dark': 'light')
-  }, [theme, isDarkMode])
+    console.log(isDarkMode)
+    setTheme(isDarkMode ? 'dark': '')
+    console.log(theme)
+  }, [isDarkMode])
   
   return (
       <div className={theme}>

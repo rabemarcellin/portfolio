@@ -4,6 +4,7 @@ import ShowIcon from "../components/ShowIcon";
 import Linked from "../components/Linked";
 import './Footer.css'
 import { useTranslation } from "react-i18next"
+import cvPdf from "../assets/CV.pdf";
 
 
 export default function () {
@@ -67,6 +68,18 @@ export default function () {
                       <div className="social__name">
                         Facebook
                       </div>
+                    </div>
+                  </a>
+                </li>
+
+                <li className="">
+                  <a
+                    href={cvPdf}
+                    className="transition duration-300 flex gap-4 items-center"
+                  >
+                    <div className="leading-normal bg-black/50 text-white border dark:border-none shadow dark:bg-slate-600 rounded-lg py-2 px-8">
+                      <div className="">{t("download-my-cv")}</div>
+                     
                     </div>
                   </a>
                 </li>
