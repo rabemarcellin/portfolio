@@ -3,36 +3,42 @@ import cvPdf from "../assets/CV.pdf";
 import MeAsImg from '../assets/me-transparent.png'
 import BlobSvg from '../assets/blob.svg'
 import Linked from "../components/Linked";
+import './Profile.css'
+import { useTranslation } from 'react-i18next';
 
 
 export default function Profile() {
-  
+  const { i18n, t } = useTranslation(); // not passing any namespace will use the defaultNS (by default set to 'translation')
+
   return (
     <Linked id="profile">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto px-4">
         <div>
-          <h6 className="text-5xl font-bold text-center leading-relaxed my-10 relative z-10">Je suis 
-          <span className="text-white drop-shadow-lg relative">
-            <span className="relative z-10 pl-4">Marcellin</span>
-          <div className="absolute w-80 -top-40 -right-20">
+          <h6 className="profile__introduce">
+            <span className="relative z-10">
+              {t("introduce-i-am")}   
+            </span>
+          <span className="name">
+            <span className="relative z-10 pl-4">{t("introduce-i-name")}</span>
+          <div className="absolute w-40 md:w-80 -top-20 -right-4 md:-top-40 md:-right-20">
             <ReactSVG src={BlobSvg} className="blur"/>
           </div>
           </span>
-          <span className="relative z-10">, et je suis utile dans la creation d'application web.</span>
+          <span className="relative z-10">, {t("introduce-i-utility")}</span>
            </h6>
         </div>
 
         <div className="flex justify-center items-center p-4">
-          <div className="border shadow w-72 rounded-3xl bg-white relative">
-              <img src={MeAsImg} alt="" className="w-full h-full rounded-3xl " />
-              <div className="absolute top-0 left-0 -translate-x-3/4 translate-y-2 z-10">
-                <div className=" bg-gray-900 text-white font-bold shadow p-2 rounded-xl">Xano/Bubble</div>
+          <div className="profile__image__cadre">
+              <img src={MeAsImg} alt="" className="w-full h-full rounded-3xl" />
+              <div className="profile__image__bubble profile__image__bubble--top-left">
+                <div className="profile__bubble__text">Xano/Bubble</div>
               </div>
-              <div className="absolute right-0 bottom-0 translate-x-3/4 -translate-y-[250px] z-10">
-                <div className="bg-white shadow p-2 rounded-xl border font-bold">React/Node.js</div>
+              <div className="profile__image__bubble profile__image__bubble--bottom">
+                <div className="profile__bubble__text">React/Node.js</div>
               </div>
-              <div className="absolute right-0 bottom-0 -translate-x-3/4 -translate-y-1/2 z-10">
-                <div className="bg-slate-50 shadow p-2 rounded-xl border font-bold">Developpeur web</div>
+              <div className="profile__image__bubble profile__image__bubble--top-right">
+                <div className="profile__bubble__text">Developpeur web</div>
               </div>
             </div>
           </div>

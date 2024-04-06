@@ -6,19 +6,20 @@ import ShowIcon from "../components/ShowIcon";
 import techs from "../datas/techs.data";
 import IDE from "../components/IDE";
 import Linked from "../components/Linked";
-
+import './Skills.css'
+import { useTranslation } from "react-i18next"
 
 const codeDemos = [
   {
     id: 0,
-    title: "Architecture de fonction de CRUD d'un todo avec Redux",
+    title: "demo-crudredux-title",
     // icons: [SiJavascript, SiRedux],
     icons: ['si-javascript', 'si-redux'],
     illustration: ReduxExampleSVG,
   },
   {
     id: 1,
-    title: "Squelette de navigation de base en utilisant React Router",
+    title: "demo-reactrouter-title",
     // icons: [SiJavascript, FaReact],
     icons: ['si-javascript', 'fa-react'],
     illustration: ReactrouterExampleSVG,
@@ -26,6 +27,7 @@ const codeDemos = [
 ];
 
 export default function Skills() {
+  const { t } = useTranslation()
   const [currentDemo, setCurrentDemo] = useState(codeDemos[0]);
 
   useEffect(() => {
@@ -40,10 +42,10 @@ export default function Skills() {
 
   return (
     <Linked id="skills">
-      <div  className="max-w-5xl mx-auto">
+      <div  className="max-w-5xl mx-auto px-4">
         <div className="my-10">
-          <h6 className="text-5xl font-bold text-center">Mes compétences</h6>
-          <div className="text-center my-2">Technologies ou en language de programmation.</div>
+          <h6 className="title md:title--center">{t("skill-title")}</h6>
+          <div className="md:text-center md:my-2">{t("skill-title-details")}</div>
         </div>
 
         <div>
@@ -51,7 +53,7 @@ export default function Skills() {
             <ResponsiveMasonry columnsCountBreakPoints={{320: 1, 576: 2, 768: 3}}>       
               <Masonry>
                 {techs.map(tech => (
-                  <li className=" border m-2 rounded-xl bg-white hover:shadow transition duration-300 p-4">
+                  <li className="language__item">
                     <div className="flex gap-4 items-center">
                       <div className="">
                         <ShowIcon name={tech.icon} className={`p-2 shadow ${tech.colorAsClass}`} />
@@ -62,8 +64,8 @@ export default function Skills() {
                     </div>
                     
                     {tech.details && (
-                      <p className="mt-8 leading-relaxed">
-                          {tech.details}
+                      <p className="language__item__details">
+                          {t(tech.details)}
                       </p>
                     )}
                   </li>
@@ -76,12 +78,12 @@ export default function Skills() {
       </div>
      
       {currentDemo && (
-          <div className=" max-w-5xl overflow-hidden transition duration-500  mx-auto">
-            <h6 className="text-5xl font-bold my-8">Exemples de fonctionnalite</h6>
+          <div className=" max-w-5xl px-4 overflow-hidden transition duration-500  mx-auto">
+            <h6 className="title">{t("feature-examples")}</h6>
             <div className="m-4 text-center">
               
-                  <h1 className="text-lg font-bold text-zinc-700">
-                    {currentDemo.title}
+                  <h1 className="text-base md:text-lg font-bold text-gray-500 dark:text-white/50">
+                    {t(currentDemo.title)}
                   </h1>
                   
             </div>

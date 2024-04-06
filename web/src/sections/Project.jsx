@@ -3,22 +3,25 @@ import ShowIcon from "../components/ShowIcon";
 import softwareLifeCycle from "../datas/software-life-cycle.data";
 import projects from "../datas/projects.data";
 import Linked from "../components/Linked";
-
+import './Project.css'
+import { useTranslation } from "react-i18next"
 
 export default function Project() {
-
+  const { t } = useTranslation()
   const [selectedProject, setSelectedProject] = useState(null)
   
 
     return (
-    <Linked id="project">
-      <div className="max-w-5xl mx-auto">
-        <h6 className="text-5xl font-bold text-center my-8">Mes projets</h6>
-        <div className="relative h-screen overflow-y-auto overflow-x-hidden w-full bg-white shadow my-8 rounded-2xl px-4  ">
-          <div className="grid grid-cols-7 h-full sticky top-0 left-0 divide-x">
+    <Linked id="project" className='py-4 md:py-8'>
+      <div className="max-w-5xl mx-auto px-4">
+        <h6 className="title md:title--center mb-8">{t("project-title")}</h6>
+        <div className="project__dashboard">
+          <div className="project__dashboard__table">
             {softwareLifeCycle.map(step => (
             <div>
-              <div key={`software-life-cycle-${step.name}`} className="backdrop-blur z-50 bg-white overflow-hidden whitespace-nowrap text-center p-2 opacity-50">{step.name}</div>
+              <div key={`software-life-cycle-${step.name}`} className="backdrop-blur z-50  overflow-hidden whitespace-nowrap text-center p-2 opacity-50">
+                {t(step.name)}
+              </div>
               <div className="flex justify-center">
                 <div className={`w-4 h-4 rounded-full bg-[${step.color}]`} style={{background: step.color}}></div>
               </div>
@@ -29,17 +32,16 @@ export default function Project() {
           <div className="absolute top-0 left-0 pt-20">
             {projects.map(project => (
               <div key={`project-table-item-${project.name}`} 
-                className={` my-8 mx-4 max-w-max p-4 shadow-md hover:bg-slate-700 hover:scale-105 hover:text-white transition
-                 duration-300 border bg-white rounded-2xl`}
+                className='project__card'
                  onMouseEnter={() => setSelectedProject(project)}
                  onMouseLeave={() => selectedProject(null)}
                  style={{
                   transform: `translateX(${(14.2*(selectedProject === project ? 1 : project.status)) - 14.2}%)`
                 }}
               >
-                <h1 className="font-bold text-xl">{project.name}</h1>
-                <p className="my-2 text-gray-500">
-                  {project.description}
+                <h1 className="font-bold text-lg md:text-xl">{project.name}</h1>
+                <p className="project__card__description">
+                  {t(project.description)}
                 </p>
                 {project.website && (
                   <div>

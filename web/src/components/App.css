@@ -10,16 +10,29 @@
     html {
         @apply scroll-smooth;
     }
+
   body {
-    @apply font-text select-none text-sm md:text-base bg-gray-100;
-    scroll-behavior: smooth;
+    @apply font-text select-none text-sm bg-slate-100;
+    @apply md:text-base;
+    @apply dark:bg-slate-700;
   }
   a {
     @apply text-current no-underline;
   }
 }
 
+
+
 @layer components {
+  .title {
+    @apply text-3xl my-4 font-bold mb-2;
+    @apply md:text-5xl md:my-8;
+  }
+
+  .title--center {
+    @apply text-center;
+  }
+
   .bg--gray {
     background-color: #f3f4f5;
   }

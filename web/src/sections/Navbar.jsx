@@ -1,14 +1,19 @@
 import { useEffect, useState, useContext, useRef } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
+import { GrClose } from "react-icons/gr";
 import TextVisibilityContext from "../contexts/TextVisibilityContext";
 import AppContext from "../contexts/AppContext";
-
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import './Navbar.css'
+import SwitchLanguageDropdown from "../components/SwitchLanguageDropdown";
+import { useTranslation } from "react-i18next";
 
 export default function NavBar() {
   const navbarRef = useRef(0)
   const [isTogglerActive, setTogglerStatus] = useState(false);
   const { isInvisible } = useContext(TextVisibilityContext)
-  const { setNavbarHeight } = useContext(AppContext)
+  const { setNavbarHeight, isDarkMode, toggleDarkMode } = useContext(AppContext)
+  const { t } = useTranslation()
 
 
   useEffect(() => {
@@ -21,14 +26,16 @@ export default function NavBar() {
       setTogglerStatus(false);
     };
   }, []);
+
+
   return (
-    <div ref={navbarRef} className="px-4 md:px-0  shadow sticky top-0 backdrop-blur z-50">
+    <div ref={navbarRef} className={'navbar'}>
       <div className="max-w-5xl mx-auto">
-        <header className="flex items-center justify-between py-4">
+        <header className="navbar__header">
           <div>
             <a
               href="#profile"
-              className="self-center font-bold whitespace-nowrap text-2xl drop-shadow-lg dark:text-white"
+              className="logo"
               style={{
                 filter: isInvisible ? 'invert(100%)': 'invert(0)'
               }}
@@ -37,59 +44,78 @@ export default function NavBar() {
             </a>
           </div>
           <div
-            className="block lg:hidden"
+            className="block md:hidden"
             onClick={() => {
               setTimeout(() => {
                 setTogglerStatus(!isTogglerActive);
               }, 100);
             }}
           >
-            <AiOutlineMenu />
+          <AiOutlineMenu />
           </div>
-          <div className="hidden lg:block">
-            <div 
-              className="flex  gap-4 text-lg items-center justify-around font-bold"
+          <div className="hidden md:block">
+            <nav 
+              className="navbar__nav"
               style={{
                 filter: isInvisible ? 'invert(100%)': 'invert(0)'
               }}
             >
-              <a href="#skills" className="hover:underline">Compétences</a>
-              <a href="#project" className="hover:underline">Réalisations</a>
-              <a href="#service" className="hover:underline">Services</a>
-              <a href="#contact" className="hover:underline">Contact</a>
-            </div>
+              <a href="#skills" className="hover:underline">{t("skill-title")}</a>
+              <a href="#project" className="hover:underline">{t("project-title")}</a>
+              <a href="#service" className="hover:underline">{t("service-title")}</a>
+              <a href="#contact" className="hover:underline">{t("contact")}</a>
+              <SwitchLanguageDropdown />
+              <DarkModeSwitch
+                moonColor={'#000'}
+                sunColor={'#FFD700'}
+                className='text-base'
+                style={{filter: 'invert(0) !important'}}
+                checked={isDarkMode}
+                onChange={toggleDarkMode}
+              />
+            </nav>
           </div>
         </header>
         <div
-          className={`${
-            isTogglerActive ? "border-b rounded-0" : "hidden"
-          } transition-all duration-500 origin-bottom lg:hidden p-2`}
+          className={`${isTogglerActive ? "border-b rounded-0" : "hidden"} 
+            transition-all duration-500 origin-bottom md:hidden  absolute top-0 left-0 w-screen h-screen 
+            overflow-hidden backdrop-blur-lg bg-white/75 dark:bg-black/75`}
         >
-          <div className="my-2 hover:underline">
-            <a href="#skills" className="">
-              Compétences
-            </a>
-          </div>
-          <div className="my-2">
-            <a href="#project" className=" ">
-              Réalisations
-            </a>
-          </div>
-          <div className="my-2">
-            <a href="#service" className="">
-              Services
-            </a>
-          </div>
-          <div className="my-2">
-            <a href="#experience" className="">
-              Expériences
-            </a>
-          </div>
-          <div className="my-2">
-            <a href="#contact" className="">
-              Contact
-            </a>
-          </div>
+           <nav 
+              className="flex flex-col w-[75vw] border dark:border-none bg-white dark:bg-slate-700 h-full p-4 rounded-r-3xl shadow-lg"
+            >
+              <div className="flex-none flex items-center justify-between w-full">
+                <div onClick={() => setTogglerStatus(false)}>
+                  <GrClose />
+                </div>
+                <div>
+                  <DarkModeSwitch
+                    moonColor={'#000'}
+                    sunColor={'#FFD700'}
+                    className='text-base'
+                    style={{filter: 'invert(0) !important'}}
+                    checked={isDarkMode}
+                    onChange={toggleDarkMode}
+                  />
+                </div>
+              </div>
+              <div className="flex-1">
+                <div className="flex h-full flex-col justify-between">
+                  <div className="flex flex-col my-8 gap-4">
+                    <a href="#skills" className="hover:underline" onClick={() => setTogglerStatus(false)}>{t("skill-title")}</a>
+                    <a href="#project" className="hover:underline" onClick={() => setTogglerStatus(false)}>{t("project-title")}</a>
+                    <a href="#service" className="hover:underline" onClick={() => setTogglerStatus(false)}>{t("service-title")}</a>
+                    <a href="#contact" className="hover:underline" onClick={() => setTogglerStatus(false)}>{t("contact")}</a>
+                  </div>
+                  <div>
+                    <SwitchLanguageDropdown center axe="top" />
+                  </div>
+                </div>
+                
+              </div>
+              
+              
+            </nav>
         </div>
       </div>
     </div>

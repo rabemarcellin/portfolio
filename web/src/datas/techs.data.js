@@ -10,7 +10,7 @@ const techs = [
         mainTech: 'React JS',
         icon: 'fa-react',
         colorAsClass: 'text-white bg-gray-900',
-        details: `Le plus souvent, associe avec tailwindcss comme avec ce site. Ayant deja utilise React Native pour les applications mobiles, Gatsby.`
+        details: "language-react-details"
     },
     {
         mainTech: 'React Native',
@@ -21,7 +21,7 @@ const techs = [
         mainTech: 'Node Js',
         icon: 'fa-nodeJs',
         colorAsClass: 'bg-green-500 text-white',
-        details: `J'utilise pour creer des api Rest Full ou GraphQL, en utilisant Express JS, et Mongoose ou Apollo.`
+        details: "language-nodejs-details"
     },
     {
         mainTech: 'FastAPI',
@@ -32,9 +32,7 @@ const techs = [
         mainTech: 'Python',
         icon: 'fa-python',
         colorAsClass: 'text-yellow-300 bg-blue-500',
-        details: `Language de choix secondaire dans la creation de script d'automatisation de tache. J'opte principalement Python pour la creation de bot Messenger avec le framework
-        Ampalibe, mais aussi pour la creation d'API avec FastAPI. 
-        `
+        details: "language-python-details"
     },
    
     {
@@ -46,7 +44,7 @@ const techs = [
         mainTech: 'Mongo DB',
         icon: 'si-mongoDB',
         colorAsClass: 'text-green-500 bg-white',
-        details: `MongoDB Atlas, mongoose(node Js).`
+        details: "language-mongodb-details"
     },
     {
         mainTech: 'SQLite',
@@ -62,7 +60,7 @@ const techs = [
         mainTech: 'Bubble/Xano',
         icon: '',
         colorAsClass: 'text-green-500 bg-white',
-        details: `Bubble pour l'interface no code et Xano pour le backend no code.`
+        details: "language-bubblexano-details"
     },
 
     {

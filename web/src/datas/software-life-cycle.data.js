@@ -1,41 +1,41 @@
 const softwareLifeCycle = [
     {
-        name: 'Analyse des besoins',
+        name: "lifecycle-feed-analyse",
         color: '#2980b9', // Bleu foncé
         index: 1,
     },
     {
-        name: 'Planification',
+        name: "lifecycle-feed-planning",
         color: '#3498db', // Bleu clair
         index: 2,
 
     },
     {
-        name: 'Conception de logiciels',
+        name: "lifecycle-feed-design",
         color: '#f1c40f', // Jaune
         index: 3,
 
     },
     {
-        name: 'Développement de logiciels',
+        name: "lifecycle-feed-development",
         color: '#2ecc71', // Vert
         index: 4,
 
     },
     {
-        name: 'Test',
+        name: "lifecycle-feed-test",
         color: '#e67e22', // Orange
         index: 5,
 
     },
     {
-        name: 'Déploiement',
+        name: "lifecycle-feed-deployment",
         color: '#9b59b6', // Violet
         index: 6,
 
     },
     {
-        name: 'Maintenance',
+        name: "lifecycle-feed-maintenance",
         color: '#e74c3c', // Rouge
         index: 7
 

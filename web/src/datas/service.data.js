@@ -1,13 +1,13 @@
 export const services = [
-    "Site vitrine attrayante",
-    "Plateforme de gestion (utilisateurs, taches)",
-    "Application Full no-code",
-    "Bot Facebook Messenger",
-    "API Rest ou Graphql"
+    "service-static-website",
+    "service-managment-plateform",
+    "service-app-nocode",
+    "service-bot-messenger",
+    "service-api"
 ]
 
 export const serviceDomain = [
-    "Web",
-    "Mobile",
-    "Bot"
+    "service-web",
+    "service-mobile",
+    "service-bot"
 ]

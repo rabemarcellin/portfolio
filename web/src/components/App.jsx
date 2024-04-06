@@ -1,29 +1,24 @@
 /* Package components */
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "react-toastify/dist/ReactToastify.css";
-import "aos/dist/aos.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import "./App.css";
 /* Custom components */
 import NavBar from "../sections/Navbar";
 import { Profile, Project, Skills  } from "../sections";
 import Footer from "../sections/Footer";
 import Service from "../sections/Service";
-import { ParallaxProvider } from "react-scroll-parallax";
+import { useContext, useEffect, useState } from "react";
+import AppContext from "../contexts/AppContext";
 
 export default function App() {
+  const [theme, setTheme] = useState('light')
+  const { isDarkMode } = useContext(AppContext)
+  
   useEffect(() => {
-    AOS.init({
-      once: true,
-    });
-  }, []);
-
+    setTheme(isDarkMode ? 'dark': 'light')
+  }, [theme, isDarkMode])
+  
   return (
-    <ParallaxProvider>
-      <div>
+      <div className={theme}>
         <NavBar />
         <Profile />
         <Skills />
@@ -31,6 +26,5 @@ export default function App() {
         <Project />
         <Footer />
       </div>
-    </ParallaxProvider>
   );
 }

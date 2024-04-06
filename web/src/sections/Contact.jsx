@@ -3,12 +3,15 @@ import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import { BsSend } from "react-icons/bs";
+import './Contact.css'
+import { useTranslation } from "react-i18next"
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export default function Contact() {
+  const { t } = useTranslation()
   const form = useRef();
 
   const defaultInputs = {
@@ -146,10 +149,7 @@ export default function Contact() {
   return (
     <div>
       
-      <div className=" max-w-3xl mx-auto">
-        <div className="">
-          <h1 className="text-2xl font-bold my-4">Envoyer moi un messager</h1>
-        </div>
+      <div className="my-8">
         <div className="w-full relative">
           <form ref={form} onSubmit={sendEmail} onBlur={catchError}>
             <div className="grid gap-2">
@@ -160,9 +160,9 @@ export default function Contact() {
                       type="text"
                       id="sender_email"
                       name="sender_email"
-                      placeholder="adresse email"
+                      placeholder={t("email-address")}
                       value={formState.inputs.sender_email}
-                      className="w-full rounded-md border border-inherit focus:bg-slate-100 focus:border-inherit focus:outline-none shadow"
+                      className="contact__input"
                       onChange={updateInput}
                     />
                   </div>
@@ -171,8 +171,8 @@ export default function Contact() {
                       type="text"
                       id="sender_name"
                       name="sender_name"
-                      className="w-full rounded-md border border-inherit focus:bg-slate-100 focus:border-inherit focus:outline-none shadow"
-                      placeholder="Nom"
+                      className="contact__input"
+                      placeholder={t("client-name")}
                       value={formState.inputs.sender_name}
                       onChange={updateInput}
                     />
@@ -184,8 +184,8 @@ export default function Contact() {
                   type="text"
                   id="subject"
                   name="subject"
-                  placeholder="Objet"
-                  className="w-full rounded-md border border-inherit focus:bg-slate-100 focus:border-inherit focus:outline-none shadow-md"
+                  placeholder={t("message-object")}
+                  className="contact__input"
                   value={formState.inputs.subject}
                   onChange={updateInput}
                 />
@@ -195,8 +195,8 @@ export default function Contact() {
                 <textarea
                   id="message"
                   name="message"
-                  className="h-[50vh] border text-sm w-full rounded-md border-inherit focus:bg-slate-100 focus:border-inherit focus:outline-none shadow-md"
-                                   placeholder="Salut Marcellin,"
+                  className="contact__input contact__input--textarea"
+                                   placeholder={t("client-message-placeholder")}
                   value={formState.inputs.message}
                   onChange={updateInput}
                 ></textarea>
