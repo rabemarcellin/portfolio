@@ -16,13 +16,13 @@
             "language-mongodb-details": "MongoDB Atlas, mongoose(node Js).",
             "language-bubblexano-details": "Bubble ho an'ny interface tsy misy code ary Xano ho an'ny backend tsy misy code.",
 
-            "service-title": "Ny tolotra azoko atolotra.",
+            "service-title": "Ny tolotra azoko atolotra",
             "service-web": "Tranokala",
             "service-mobile": "Finday",
             "service-bot": "Bot",
-            "service-static-website": "Tranokala statika maninontana.",
+            "service-static-website": "Tranokala statika maninontana",
             "service-managment-plateform": "Tranokala misehatra fitantanana (mpampiasa, asa)",
-            "service-app-nocode": "App tsy ilaina kaody.",
+            "service-app-nocode": "App tsy ilaina kaody",
             "service-bot-messenger": "Bot Facebook Messenger",
             "service-api": "API Rest na Graphql",
 
@@ -47,7 +47,7 @@
             "message-object": "Lohahevitra",
             "client-message-placeholder": "Miarahaba Marcellin,",
 
-            "download-my-cv": "Hitahiry ny CV-ko."
+            "download-my-cv": "Hitahiry ny CV-ko"
 
         }
     },

@@ -7,12 +7,13 @@ const AppContext = createContext({});
 export default AppContext
 
 export const AppProvider = () => {
-    const [isDarkMode, setDarkMode] = useState(localStorage.getItem('theme') || true);
+    localStorage.getItem('darkmode') || localStorage.setItem('darkmode', false)
+    const [isDarkMode, setDarkMode] = useState(localStorage.getItem('darkmode'));
     const [navbarHeight, setNavbarHeight] = useState(null)
 
     const toggleDarkMode = (checked) => {
         setDarkMode(checked);
-        localStorage.setItem('theme', checked)
+        localStorage.setItem('darkmode', checked)
       };
 
     const value = {

@@ -35,7 +35,7 @@ export default function SwitchLanguageDropdown({ axe = 'bottom', center }) {
           style={{transform: axe === 'top' ? 'translateY(-40%)': 'translateY(100%)'}}
         >
           {languages.map(lang => (
-            <div onClick={() => {
+            <div key={`switch-language-item-${lang.code}--${lang.label}`} onClick={() => {
               setCurrentLanguageCode(lang)
             }} className='flex text-sm py-2 px-8 gap-4   bg-white dark:bg-slate-600 dark:border-slate-800 dark:shadow-black/50'>
               <div className='font-bold'>

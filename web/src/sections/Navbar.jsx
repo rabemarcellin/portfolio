@@ -94,7 +94,7 @@ export default function NavBar() {
                     moonColor={'#000'}
                     sunColor={'#FFD700'}
                     className='text-base'
-                    style={{filter: 'invert(0) !important'}}
+                    style={{filter: 'invert(0)'}}
                     checked={isDarkMode}
                     onChange={toggleDarkMode}
                   />

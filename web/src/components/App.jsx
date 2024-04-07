@@ -9,14 +9,12 @@ import Service from "../sections/Service";
 import "./App.css";
 
 export default function App() {
-  const [theme, setTheme] = useState('light')
   const { isDarkMode } = useContext(AppContext)
+  const [theme, setTheme] = useState(isDarkMode ? 'dark': '')
   
   useEffect(() => {
-    console.log(isDarkMode)
     setTheme(isDarkMode ? 'dark': '')
-    console.log(theme)
-  }, [isDarkMode])
+  }, [isDarkMode, theme, setTheme])
   
   return (
       <div className={theme}>
