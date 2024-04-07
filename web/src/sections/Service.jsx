@@ -16,7 +16,7 @@ export default function Service() {
       <div className="max-w-5xl mx-auto px-4">
         <h6 className="title md:title--center mb-8">{t("service-title")}</h6>
         <div className="md:flex items-center relative">
-          <div className="absolute top-0 left-0 md:static w-[400px] mx-auto opacity-20 md:opacity-100 md:w-1/2">
+          <div className="absolute top-0 left-0 md:static w-full mx-auto opacity-20 md:opacity-100 md:w-1/2">
             <ReactSVG src={ServiceWorkerSvg} />
           </div>
           <div className="md:w-1/2 bg-transparent relative z-10">
