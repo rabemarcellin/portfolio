@@ -17,7 +17,7 @@ export default {
         },
       },
       fontFamily: {
-        text: [ ' "PT Serif"', "serif"],
+        text: [ ' "PT Sans"', "serif"],
         monospace: ['"Source Code Pro"', "monospace"],
         title: ['"Yantramanav"', "sans-serif"],
       },
