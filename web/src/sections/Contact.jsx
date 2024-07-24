@@ -3,15 +3,15 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import { BsSend } from "react-icons/bs";
-import './Contact.css'
-import { useTranslation } from "react-i18next"
+import "./Contact.css";
+import { useTranslation } from "react-i18next";
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export default function Contact() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   const form = useRef();
 
   const defaultInputs = {
@@ -148,8 +148,7 @@ export default function Contact() {
 
   return (
     <div>
-      
-      <div className="my-8">
+      <div className="p-8 border border-gray-400 rounded-xl shadow-lg bg-slate-100">
         <div className="w-full relative">
           <form ref={form} onSubmit={sendEmail} onBlur={catchError}>
             <div className="grid gap-2">
@@ -214,7 +213,7 @@ export default function Contact() {
                         viewBox="0 0 100 101"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                      > 
+                      >
                         <path
                           d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
                           fill="#E5E7EB"
@@ -226,7 +225,9 @@ export default function Contact() {
                       </svg>
                     )}
                     <BsSend
-                      className={`${formState.sending ? "hidden" : ""} text-xs text-black`}
+                      className={`${
+                        formState.sending ? "hidden" : ""
+                      } text-xs text-black`}
                     />
                   </button>
                 </div>
@@ -235,7 +236,7 @@ export default function Contact() {
           </form>
         </div>
       </div>
-     <Toaster position="bottom-center" />
+      <Toaster position="bottom-center" />
     </div>
   );
 }
