@@ -5,13 +5,16 @@
 
 .navbar {
     @apply px-4 md:px-0  shadow sticky top-0 border-b backdrop-blur z-50 bg-white/20 ;
-    @apply dark:text-white dark:bg-slate-600 dark:border-slate-800  dark:shadow-black/50;
+    @apply dark:text-white dark:bg-slate-800 dark:border-slate-800  dark:shadow-black/50;
 }
 
 .navbar__nav {
-    @apply flex gap-4 text-base items-center justify-around font-bold mx-2;
-    @apply lg:text-lg;
-    @apply dark:invert-0 !important;
+    @apply flex gap-10 text-base items-center justify-around font-medium mx-2 text-gray-500 px-4 rounded-xl;
+    @apply  dark:bg-slate-800 dark:border-slate-800;
+
+    a {
+        @apply hover:text-black dark:text-white/75 dark:hover:text-white;
+    }
 }
 
 .navbar__header {

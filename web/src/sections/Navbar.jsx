@@ -60,10 +60,10 @@ export default function NavBar() {
                 filter: isInvisible ? 'invert(100%)': 'invert(0)'
               }}
             >
-              <a href="#skills" className="hover:underline">{t("skill-title")}</a>
-              <a href="#project" className="hover:underline">{t("project-title")}</a>
-              <a href="#service" className="hover:underline">{t("service-title")}</a>
-              <a href="#contact" className="hover:underline">{t("contact")}</a>
+              <a href="#skills" className="">{t("skill-title")}</a>
+              <a href="#project" className="">{t("project-title")}</a>
+              <a href="#service" className="">{t("service-title")}</a>
+              <a href="#contact" className="">{t("contact")}</a>
               <SwitchLanguageDropdown />
               <DarkModeSwitch
                 moonColor={'#000'}
@@ -83,7 +83,7 @@ export default function NavBar() {
             overflow-hidden backdrop-blur-lg bg-white/75 dark:bg-black/75`}
         >
            <nav 
-              className="flex flex-col w-[75vw] border dark:border-none bg-white dark:bg-slate-700 h-full p-4 rounded-r-3xl shadow-lg"
+              className="flex flex-col w-[75vw] border dark:border-none bg-white dark:bg-slate-900 h-full p-4 rounded-r-3xl shadow-lg"
             >
               <div className="flex-none flex items-center justify-between w-full">
                 <div onClick={() => setTogglerStatus(false)}>
@@ -103,10 +103,10 @@ export default function NavBar() {
               <div className="flex-1">
                 <div className="flex h-full flex-col justify-between">
                   <div className="flex flex-col my-8 gap-4">
-                    <a href="#skills" className="hover:underline" onClick={() => setTogglerStatus(false)}>{t("skill-title")}</a>
-                    <a href="#project" className="hover:underline" onClick={() => setTogglerStatus(false)}>{t("project-title")}</a>
-                    <a href="#service" className="hover:underline" onClick={() => setTogglerStatus(false)}>{t("service-title")}</a>
-                    <a href="#contact" className="hover:underline" onClick={() => setTogglerStatus(false)}>{t("contact")}</a>
+                    <a href="#skills" className="" onClick={() => setTogglerStatus(false)}>{t("skill-title")}</a>
+                    <a href="#project" className="" onClick={() => setTogglerStatus(false)}>{t("project-title")}</a>
+                    <a href="#service" className="" onClick={() => setTogglerStatus(false)}>{t("service-title")}</a>
+                    <a href="#contact" className="" onClick={() => setTogglerStatus(false)}>{t("contact")}</a>
                   </div>
                   <div>
                     <SwitchLanguageDropdown center axe="top" />

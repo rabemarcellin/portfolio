@@ -17,7 +17,7 @@ export default {
         },
       },
       fontFamily: {
-        text: [ ' "PT Sans"', "serif"],
+        text: [ 'Poppins', ' "PT Sans"', "serif"],
         monospace: ['"Source Code Pro"', "monospace"],
         title: ['"Yantramanav"', "sans-serif"],
       },

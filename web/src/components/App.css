@@ -14,7 +14,7 @@
   body {
     @apply font-text select-none text-sm bg-slate-100;
     @apply md:text-base;
-    @apply dark:bg-slate-700;
+    @apply dark:text-white;
   }
   a {
     @apply text-current no-underline;

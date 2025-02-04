@@ -53,8 +53,8 @@
   "fr": {
     "translation": {
       "introduce-i-am": "",
-      "introduce-i-name": ".Marcellin.",
-      "introduce-i-utility": "Aspirant Développeur web full-stack",
+      "introduce-i-name": "RABE Marcellin",
+      "introduce-i-utility": "Développeur",
       "skill-title": "Mes compétences",
       "skill-title-details": "Téchnologies ou en language de programmation.",
       "demo-crudredux-title": "Architecture de fonction de CRUD d'un todo avec Redux",
@@ -103,8 +103,8 @@
   "en": {
     "translation": {
       "introduce-i-am": "I am",
-      "introduce-i-name": "Marcellin",
-      "introduce-i-utility": "and I am useful in creating web applications",
+      "introduce-i-name": "RABE Marcellin",
+      "introduce-i-utility": "Developer",
       "skill-title": "My skills",
       "skill-title-details": "Technologies or programming languages.",
       "demo-crudredux-title": "CRUD function architecture of a todo with Redux",
