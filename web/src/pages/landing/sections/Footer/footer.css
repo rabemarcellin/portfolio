@@ -10,7 +10,7 @@
   }
   
   .footer__card__social {
-    @apply bg-slate-100 hover:text-white border border-gray-400 shadow rounded-xl py-2 pl-2 pr-8 my-2;
+    @apply bg-slate-100 hover:text-white border border-gray-400 rounded-full pl-2 pr-8 w-fit text-sm;
     @apply dark:text-white;
   }
   
@@ -35,8 +35,9 @@
     @apply text-white/75;
   }
   .footer__card__social .icon {
-    width: 48px;
-    height: 48px;
+    width: 24px;
+    height: 24px;
+    @apply rounded-full;
   }
   .footer__card__social .icon.icon--linkedin {
     @apply text-[#0070B5];

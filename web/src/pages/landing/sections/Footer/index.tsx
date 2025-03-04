@@ -41,7 +41,7 @@ export default function () {
                   <div className="font-bold text-lg md:text-2xl mt-8 mb-2">
                     {t("social-networks")}
                   </div>
-                  <ul className="">
+                  <ul className="flex gap-2 flex-wrap mb-20 md:mb-0">
                     <li className="footer__card__social footer__card__social--linkedin">
                       <a
                         href="https://www.linkedin.com/in/marcellinrabe/"
@@ -79,7 +79,7 @@ export default function () {
                         href={cvPdf}
                         className="transition duration-300 flex gap-4 items-center"
                       >
-                        <div className="leading-normal w-full text-center bg-black/50 text-white border dark:border-none shadow-sm dark:bg-slate-600 rounded-lg py-2 px-8">
+                        <div className="leading-normal text-sm w-full text-center border border-slate-200 shadow hover:shadow-none hover:bg-slate-100 dark:hover:text-white dark:hover:bg-slate-800 rounded-full py-2 px-8">
                           <div className="">{t("download-my-cv")}</div>
                         </div>
                       </a>
@@ -95,7 +95,7 @@ export default function () {
         </div>
 
         <div className="text-center py-8">
-          <span>Copyright © 2023-24 RABE Marcellin. Tous droits réservés.</span>
+          <span>Copyright © 2023-25 RABE Marcellin. Tous droits réservés.</span>
         </div>
       </div>
     </Linked>

@@ -1,8 +1,7 @@
 /* Package components */
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
-import { BsSend } from "react-icons/bs";
 import "./contact.css";
 import { useTranslation } from "../../../../../node_modules/react-i18next";
 
@@ -119,54 +118,101 @@ export default function Contact() {
       ) {
         throw Error("error found!");
       }
+
       updateFormState("sending");
 
       emailjs
-        .sendForm(
+        .send(
           EMAILJS_SERVICE_ID,
           EMAILJS_TEMPLATE_ID,
-          form.current,
-          EMAILJS_PUBLIC_KEY
+          {
+            subject: formState.inputs.subject,
+            message: formState.inputs.message,
+            from_name: formState.inputs.sender_name,
+            reply_to: formState.inputs.sender_email,
+          }        
         )
-        .then(() => {
-          if (form.current) {
-            form.current.reset();
-            updateFormState("reset");
-          }
-          toast.custom((t) => (
-            <div
-              className={`${
-                t.visible ? "animate-enter" : "animate-leave"
-              } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
-            >
-              <div className="flex-1 w-0 p-4">
-                <div className="flex items-start">
-                  <div className="shrink-0 pt-0.5">
-                    <img
-                      className="h-10 w-10 rounded-full"
-                      src="https://avatars.githubusercontent.com/u/135693649?v=4"
-                      alt=""
-                    />
-                  </div>
-                  <div className="ml-3 flex-1">
-                    <p className="text-sm font-medium text-gray-900">
-                      RABE Marcellin
-                    </p>
-                    <p className="mt-1 text-sm text-gray-500">
-                      Message reçu, je vous repondrai au plus vite.
-                    </p>
+        .then(
+          () => {
+            if (form.current) {
+              form.current.reset();
+              updateFormState("reset");
+            }
+            toast.custom((t) => (
+              <div
+                className={`${
+                  t.visible ? "animate-enter" : "animate-leave"
+                } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+              >
+                <div className="flex-1 w-0 p-4">
+                  <div className="flex items-start">
+                    <div className="shrink-0 pt-0.5">
+                      <img
+                        className="h-10 w-10 rounded-full"
+                        src="https://avatars.githubusercontent.com/u/135693649?v=4"
+                        alt=""
+                      />
+                    </div>
+                    <div className="ml-3 flex-1">
+                      <p className="text-sm font-medium text-gray-900">
+                        RABE Marcellin
+                      </p>
+                      <p className="mt-1 text-sm text-gray-500">
+                        Message reçu, je vous repondrai au plus vite.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ));
-        });
+            ));
+          },
+          (error) => {
+            setFormState({
+              ...formState,
+              catchError: [...formState.catchError, error.text],
+              sending: false,
+            });
+            toast.custom((t) => (
+              <div
+                className={`${
+                  t.visible ? "animate-enter" : "animate-leave"
+                } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+              >
+                <div className="flex-1 w-0 p-4">
+                  <div className="flex items-start">
+                    <div className="shrink-0 pt-0.5">
+                      <img
+                        className="h-10 w-10 rounded-full"
+                        src="https://avatars.githubusercontent.com/u/135693649?v=4"
+                        alt=""
+                      />
+                    </div>
+                    <div className="ml-3 flex-1">
+                      <p className="text-sm font-medium text-gray-900">
+                        RABE Marcellin
+                      </p>
+                      <p className="mt-1 text-sm text-gray-500">
+                        Message non envoyé, veuillez réessayer.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ));
+          }
+        );
     } catch (error) {}
   };
 
+  useEffect(() => {
+    emailjs.init({
+      publicKey: EMAILJS_PUBLIC_KEY,
+    });
+  }, []);
+
   return (
     <div>
-      <div className="p-8 border border-gray-400 rounded-xl shadow-lg bg-slate-100">
+      <div className="">
         <div className="w-full relative">
           <form ref={form} onSubmit={sendEmail} onBlur={catchError}>
             <div className="grid gap-2">
@@ -217,7 +263,17 @@ export default function Contact() {
                   value={formState.inputs.message}
                   onChange={updateInput}
                 ></textarea>
-                <div className="absolute bottom-0 right-0 -translate-x-1/4 -translate-y-1/4">
+                <div>
+                  <button
+                    type="submit"
+                    className="bg-slate-800 text-white w-full p-2 rounded-xl disabled:opacity-50"
+                    disabled={formState.catchError.length > 0 ? true : false}
+
+                  > {
+                    formState.sending ? "Envoi..." : "M'ecrire"
+                  }</button>
+                </div>
+                {/* <div className="absolute bottom-0 right-0 -translate-x-1/4 -translate-y-1/4">
                   <button
                     type="submit"
                     className={`enabled:active:scale-95 rounded-full p-3 border shadow-lg bg-white disabled:opacity-50 text-center`}
@@ -248,7 +304,7 @@ export default function Contact() {
                       } text-xs text-black`}
                     />
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </form>
