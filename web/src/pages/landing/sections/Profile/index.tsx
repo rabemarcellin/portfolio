@@ -7,7 +7,7 @@ import "./profile.css";
 import { useTranslation } from "../../../../../node_modules/react-i18next";
 
 export default function Profile() {
-  const { i18n, t } = useTranslation(); // not passing any namespace will use the defaultNS (by default set to 'translation')
+  const { t } = useTranslation(); // not passing any namespace will use the defaultNS (by default set to 'translation')
 
   const myPosts = ["React", "Node", "Python"]
   return (
@@ -55,7 +55,6 @@ export default function Profile() {
             </h6>
           </div>
         </div>
-        <div className="border-b border-slate-400 dark:border-gray-700 pt-5"></div>
       </div>
     </Linked>
   );

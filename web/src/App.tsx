@@ -13,8 +13,8 @@ import "./App.css";
 import Parcours from "./pages/landing/sections/Parcours";
 
 export default function App() {
-  const { isDarkMode } = useContext(AppContext);
-
+  const appContext = useContext(AppContext);
+  const isDarkMode = appContext ? appContext.isDarkMode : false;
   return (
     <div className={isDarkMode ? "dark" : "light"}>
       <NavBar />

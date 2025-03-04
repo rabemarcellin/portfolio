@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ShowIcon from "../../../../components/ShowIcon";
 import softwareLifeCycle from "../../../../store/datas/software-life-cycle";
 import projects from "../../../../store/datas/projects";
@@ -7,9 +7,11 @@ import './project.css'
 
 import { useTranslation } from "../../../../../node_modules/react-i18next"
 
+type Project = typeof projects[number]
+
 export default function Project() {
   const { t } = useTranslation()
-  const [selectedProject, setSelectedProject] = useState(null)
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   
 
     return (
@@ -62,7 +64,7 @@ export default function Project() {
                     </div>
                     <div>
                       <div className="w-4 h-4 rounded-full bg-blue-500" style={{
-                        background: softwareLifeCycle.find(lifeCycleItem => lifeCycleItem.index === project.status).color
+                        background: softwareLifeCycle.find(lifeCycleItem => lifeCycleItem.index === project.status)?.color || "inherit"
                       }}></div>
                     </div>
                   </div>

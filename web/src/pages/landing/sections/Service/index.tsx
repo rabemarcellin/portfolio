@@ -1,4 +1,3 @@
-import React from "react";
 import ServiceWorkerSvg from "../../../../assets/img/svg/service-worker.svg"
 import { ReactSVG } from "react-svg";
 import ShowIcon from "../../../../components/ShowIcon";

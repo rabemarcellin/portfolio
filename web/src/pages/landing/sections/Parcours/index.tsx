@@ -1,4 +1,3 @@
-import React from 'react'
 import { Chrono } from "react-chrono";
 import ConstellationImg from "../../../../assets/img/constellation.png"
 import DmsnImg from "../../../../assets/img/dmsn.png"
@@ -7,6 +6,10 @@ import IteamSImg from "../../../../assets/img/iteam-s.png"
 import EstiImg from "../../../../assets/img/esti.png"
 import UniversInfoImg from "../../../../assets/img/univers-informatique.png"
 import ITBuilderImg from "../../../../assets/img/it-builder.png"
+import ProgrammeSesameImg from "../../../../assets/img/programme-sesame.png"
+
+import "./parcours.css"
+import Linked from "../../../../components/Linked";
 
 const Parcours = () => {
     const items = [
@@ -104,25 +107,46 @@ const Parcours = () => {
             }
             }
         },
+        {
+            title: "2020",
+            cardTitle: "Programme SESAME",
+            url: "https://programme-sesame.mg",
+            cardSubtitle:"Boursier",
+            cardDetailedText: "Bénéficiaire d'accompagnement socio-éducatif et professionnel par le Programme SESAME, de passage à l'année préparatoire après l'obtention du baccalauréat puis dans un foyer proche de l'Etablissement Supérieure financé par le Programme SESAME, ainsi que les frais d'étude universtaire.",
+            media: {
+            type: "IMAGE",
+            source: {
+                url:ProgrammeSesameImg
+            }
+            }
+        },
     ];
   
       
   return (
-    <div className='max-w-5xl mx-auto px-4'>
-        <div className='h-[90vh] flex justify-center items-center'>
-            <div className='w-full'>
-                <h2 className='text-sm lg:text-base italic my-4 underline text-gray-500 font-light' >A propos de moi</h2>
-                <p className='text-xl lg:text-3xl leading-relaxed'>
-                    Je suis un développeur full stack passionné et qui baigne dans le développement d'application web. <br/> <span className='text-base lg:text-lg text-slate-600'>Situé à Antananarivo, Madagascar. 🇲🇬</span>
-                </p>
+    <Linked id="parcours" className='py-4 md:py-8 dark:bg-slate-900'>
+        <div className='max-w-5xl mx-auto px-4'>
+            <div className='h-fit mb-20 md:mb-0 md:h-[90vh] flex justify-center items-center'>
+                <div className='w-full'>
+                    <h2 className='text-sm lg:text-base italic my-4 underline text-gray-500 dark:text-gray-300 font-light' >A propos de moi</h2>
+                    <p className='text-xl lg:text-3xl leading-relaxed dark:text-white'>
+                        Je suis un développeur full stack passionné et qui baigne dans le développement d'application web. <br/> 
+                        <span className='text-base lg:text-lg text-slate-600 dark:text-slate-400'>Situé à Antananarivo, Madagascar. 🇲🇬</span>
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <h1 className='text-5xl font-bold my-4 hover:underline dark:border-slate-700 border-b pb-4 border-slate-300 dark:text-white'>Mon Parcours</h1>
+            <Chrono items={items} disableToolbar mode="VERTICAL_ALTERNATING" classNames={{
+                    card: "dark:!bg-slate-800",
+                    cardSubtitle: "dark:!text-white",
+                    cardDetailedText: "text-base lg:text-lg font-light dark:!text-white",
+                    cardMedia: "w-full h-full rounded-3xl",
+            }} />
             </div>
         </div>
-
-         <div>
-            <h1 className='text-5xl font-bold my-4 hover:underline border-b pb-4 border-slate-300' >Mon Parcours</h1>
-          <Chrono items={items} disableToolbar mode="VERTICAL_ALTERNATING" />
-        </div>
-    </div>
+    </Linked>
   )
 }
 

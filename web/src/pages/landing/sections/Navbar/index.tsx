@@ -18,9 +18,9 @@ const styles = {
 }
 
 export default function NavBar() {
-  const navbarRef = useRef(0)
+  const navbarRef = useRef<HTMLDivElement>(null)
   const [isTogglerActive, setTogglerStatus] = useState(false);
-  const { isInvisible } = useContext(TextVisibilityContext)
+  const textVisibilityContext = useContext(TextVisibilityContext)
   const { setNavbarHeight, isDarkMode, toggleDarkMode } = useContext(AppContext)
   const { t } = useTranslation()
 
@@ -46,7 +46,7 @@ export default function NavBar() {
               href="#profile"
               className="logo"
               style={{
-                filter: isInvisible ? 'invert(100%)': 'invert(0)'
+                filter: textVisibilityContext?.isInvisible ? 'invert(100%)': 'invert(0)'
               }}
             >
               M@R
@@ -66,14 +66,14 @@ export default function NavBar() {
             <nav 
               className={styles.nav}
               style={{
-                filter: isInvisible ? 'invert(100%)': 'invert(0)'
+                filter: textVisibilityContext?.isInvisible ? 'invert(100%)': 'invert(0)'
               }}
             >
               <a href="#skills" className={styles.navLink}>{t("skill-title")}</a>
               <a href="#project" className={styles.navLink}>{t("project-title")}</a>
               <a href="#service" className={styles.navLink}>{t("service-title")}</a>
               <a href="#contact" className={styles.navLink}>{t("contact")}</a>
-              <SwitchLanguageDropdown />
+              <SwitchLanguageDropdown center axe="top" />
               <DarkModeSwitch
                 moonColor={'#FFF'}
                 sunColor={'#000'}
@@ -104,7 +104,7 @@ export default function NavBar() {
                     sunColor={'#FFD700'}
                     className='text-base'
                     style={{filter: 'invert(0)'}}
-                    checked={isDarkMode}
+                    checked={isDarkMode || false}
                     onChange={toggleDarkMode}
                   />
                 </div>

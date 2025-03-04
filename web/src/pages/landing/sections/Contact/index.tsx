@@ -1,5 +1,5 @@
 /* Package components */
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import { BsSend } from "react-icons/bs";
@@ -10,9 +10,23 @@ const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+type Inputs = {
+  sender_email: string;
+  sender_name: string;
+  subject: string;
+  message: string;
+}
+
+type FormState = {
+  sending: boolean;
+  catchError: string[];
+    inputs: Inputs;
+}
+
+
 export default function Contact() {
   const { t } = useTranslation();
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
 
   const defaultInputs = {
     sender_email: "",
@@ -20,16 +34,17 @@ export default function Contact() {
     subject: "",
     message: "",
   };
+
   const defaultFormState = {
     sending: false,
     catchError: [],
     inputs: defaultInputs,
   };
 
-  const [formState, setFormState] = useState(defaultFormState);
+  const [formState, setFormState] = useState<FormState>(defaultFormState);
 
   const updateFormState = (
-    attr,
+    attr: string,
     target = { name: "", value: "" },
     sending = true
   ) => {
@@ -53,7 +68,7 @@ export default function Contact() {
       case "catchError":
         setFormState({
           ...formState,
-          catchError: [...new Set(formState.catchError.concat(name))],
+          catchError: [...new Set(formState.catchError.concat([name]))],
         });
         break;
 
@@ -74,12 +89,12 @@ export default function Contact() {
     }
   };
 
-  const updateInput = (event) => {
+  const updateInput = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
     catchError(event);
     updateFormState("form", event.target);
   };
 
-  const catchError = (event) => {
+  const catchError = (event: React.FocusEvent<HTMLFormElement> | React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
     const target = event.target;
 
     if (event.target.type != "submit") {
@@ -89,15 +104,16 @@ export default function Contact() {
         (target.name === "sender_email" &&
           emailRegex.test(target.value) === false);
 
-      updateFormState(not_conform ? "catchError" : "removeError", target);
+      updateFormState(not_conform ? "catchError" : "removeError", {name: target.name, value: target.value});
     }
   };
 
-  const sendEmail = (event) => {
+  const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     try {
       if (
+        !form.current ||
         formState.catchError.length !== 0 ||
         JSON.stringify(formState.inputs) === JSON.stringify(defaultInputs)
       ) {
@@ -113,8 +129,10 @@ export default function Contact() {
           EMAILJS_PUBLIC_KEY
         )
         .then(() => {
-          form.current.reset();
-          updateFormState("reset");
+          if (form.current) {
+            form.current.reset();
+            updateFormState("reset");
+          }
           toast.custom((t) => (
             <div
               className={`${
@@ -209,7 +227,7 @@ export default function Contact() {
                       <svg
                         aria-hidden="true"
                         role="status"
-                        class="inline w-4 h-4 mr-3 text-black animate-spin"
+                        className="inline w-4 h-4 mr-3 text-black animate-spin"
                         viewBox="0 0 100 101"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"

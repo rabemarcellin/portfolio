@@ -1,34 +1,33 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import TextVisibilityProvider from "./TextVisibilityProvider";
 import AppRouter from "../pages/routes/AppRouter";
 import AppContext from "../store/contexts/AppContext";
 
 import "../store/language/i18n";
-
-
+import { AppContextType } from "../typescript/app.context";
 
 
 export const AppProvider = () => {
   let whiteMode = false;
-  if (localStorage.getItem("darkmode")) {
-    whiteMode = JSON.parse(localStorage.getItem("darkmode"));
+  const darkMode = localStorage.getItem("darkmode");
+  if (darkMode) {
+    whiteMode = JSON.parse(darkMode);
   } else {
-    localStorage.setItem("darkmode", false);
+    localStorage.setItem("darkmode", false.toString());
   }
 
   const [isDarkMode, setDarkMode] = useState(whiteMode);
-  const [navbarHeight, setNavbarHeight] = useState(null);
+  const [navbarHeight, setNavbarHeight] = useState(0);
 
-  const toggleDarkMode = (checked) => {
-    setDarkMode(checked);
-    localStorage.setItem("darkmode", checked);
+  const toggleDarkMode = () => {
+    setDarkMode(state => {
+      const checked = !state
+      localStorage.setItem("darkmode", checked.toString());
+      return !state
+  });
   };
 
-  useEffect(() => {
-    console.log("isDarkMode: ", typeof isDarkMode);
-  }, [isDarkMode]);
-
-  const value = {
+  const value: AppContextType = {
     navbarHeight,
     setNavbarHeight,
     isDarkMode,

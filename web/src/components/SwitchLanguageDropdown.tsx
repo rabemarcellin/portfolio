@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from "../../node_modules/react-i18next"
 import languagesType from '../store/datas/language/type'
 import { defaultLanguageCode } from '../store/language/i18n'
 
-export default function SwitchLanguageDropdown({ axe = 'bottom', center }) {
+export default function SwitchLanguageDropdown({ axe = 'bottom', center }: { axe?: 'bottom' | 'top', center?: boolean }) {
     const { i18n } = useTranslation()
     const [isShowDropdown, setIsShowDropdown] = useState(false)
-    const [currentLanguageCode, setCurrentLanguageCode] = useState(languagesType.find(lang => lang.code === defaultLanguageCode))    
+    const [currentLanguageCode, setCurrentLanguageCode] = useState(languagesType.find(lang => lang.code === defaultLanguageCode) ?? languagesType[0])    
     
     useEffect(() => {
       i18n.changeLanguage(currentLanguageCode.code)
