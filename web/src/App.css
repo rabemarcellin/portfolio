@@ -4,7 +4,12 @@
 
 
 @theme {
-  --font-text: "Space Grotesk", "Poppins", "PT Sans", "serif";
+  --font-text:   "Open Sans", "Merriweather", "Ubuntu", "Montserrat", "Roboto", "Space Grotesk", "Poppins", "PT Sans", "sans-serif";
+  --font-title: "Source Code Pro" "serif";
+}
+
+.text-title {
+  @apply font-title;
 }
 
 @layer base {
@@ -20,6 +25,8 @@
   a {
     @apply text-current no-underline;
   }
+
+  
 }
 
 
@@ -33,6 +40,8 @@
   );
   background-size: 39px 39px;
 }
+
+  
 
   .title {
     @apply text-3xl my-4 font-bold mb-2;

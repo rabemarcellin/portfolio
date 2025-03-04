@@ -126,7 +126,7 @@ const Parcours = () => {
   return (
     <Linked id="parcours" className='py-4 md:py-8 dark:bg-slate-900'>
         <div className='max-w-5xl mx-auto px-4'>
-            <div className='h-fit mb-20 md:mb-0 md:h-[90vh] flex justify-center items-center'>
+            <div className='h-fit mb-20 md:mb-0 md:h-[30vh] flex justify-center items-center'>
                 <div className='w-full'>
                     <h2 className='text-sm lg:text-base italic my-4 underline text-gray-500 dark:text-gray-300 font-light' >A propos de moi</h2>
                     <p className='text-xl lg:text-3xl leading-relaxed dark:text-white'>

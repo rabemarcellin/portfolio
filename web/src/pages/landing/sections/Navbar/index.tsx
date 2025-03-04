@@ -9,7 +9,7 @@ import { useTranslation } from "../../../../../node_modules/react-i18next";
 
 
 const styles = {
-  container: "px-4 md:px-0  shadow sticky top-0 border-b backdrop-blur z-50 bg-white/20 \
+  container: "px-4 md:px-0  shadow sticky top-0 backdrop-blur z-50 bg-white/20 \
     dark:text-white dark:bg-slate-800 dark:border-slate-800  dark:shadow-black/50",
     header: "flex items-center justify-between p-4",
     nav: "flex gap-10 text-base items-center justify-around font-medium mx-2 text-gray-500 px-4 rounded-xl\

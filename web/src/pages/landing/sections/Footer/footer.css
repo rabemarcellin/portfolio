@@ -1,8 +1,10 @@
 @reference "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
 
 .footer {
-    @apply shadow bg-white;
-    @apply dark:bg-slate-800 dark:shadow-black/50;
+    @apply shadow bg-white ;
+    @apply dark:bg-slate-900 dark:shadow-black/50 dark:text-white;
   }
   .footer__contacts li {
     @apply text-gray-500 hover:text-inherit;
@@ -17,13 +19,13 @@
   .footer__card__social--linkedin {
     @apply hover:bg-[#0070B5];
     @apply hover:border-[#0070B5];
-    @apply dark:bg-[#0070B5] dark:border-[#0070B5];
+    @apply dark:bg-transparent dark:border-[#0070B5];
   }
   
   .footer__card__social--facebook {
     @apply hover:bg-[#4267B2];
     @apply hover:border-[#4267B2];
-    @apply dark:bg-[#4267B2] dark:border-[#4267B2];
+    @apply dark:bg-transparent dark:border-[#4267B2];
   }
   
   .footer__card__social .social__name {

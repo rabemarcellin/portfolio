@@ -37,7 +37,7 @@ export default function Profile() {
                   <ReactSVG src={BlobSvg} className="blur-sm transition-[fill] duration-100 fill-slate-200 dark:fill-slate-700" />
                 </div>
               </div>
-              <p className="relative z-10 text-5xl md:text-7xl text-gray-700 dark:text-gray-300">
+              <p className="relative z-10 text-5xl md:text-7xl text-gray-700 dark:text-gray-300 text-title">
                 <div className="text-2xl md:text-4xl text-gray-500 dark:text-gray-6500 drop-shadow-lg drop-shadow-white">
                   {t("introduce-i-utility")}
       

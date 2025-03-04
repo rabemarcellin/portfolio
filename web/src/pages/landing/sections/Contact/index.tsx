@@ -266,7 +266,7 @@ export default function Contact() {
                 <div>
                   <button
                     type="submit"
-                    className="bg-slate-800 text-white w-full p-2 rounded-xl disabled:opacity-50"
+                    className="bg-slate-800 dark:dark:bg-[#0070B5] text-white w-full p-2 rounded-xl disabled:opacity-50"
                     disabled={formState.catchError.length > 0 ? true : false}
 
                   > {

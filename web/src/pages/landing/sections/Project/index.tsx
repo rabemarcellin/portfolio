@@ -15,7 +15,7 @@ export default function Project() {
   
 
     return (
-    <Linked id="project" className='py-4 md:py-8'>
+    <Linked id="project" className='py-4 md:py-8 dark:bg-slate-900 dark:text-white'>
       <div className="max-w-5xl mx-auto px-4">
         <h6 className="title md:title--center mb-8">{t("project-title")}</h6>
         <div className="project__dashboard">
