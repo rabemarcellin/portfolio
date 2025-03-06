@@ -66,6 +66,8 @@
         "language-mongodb-details": "MongoDB Atlas, mongoose(node Js).",
         "language-bubblexano-details": "Bubble pour l'interface no code et Xano pour le backend no code.",
   
+        "parcours-title": "Mon parcours",
+        
         "service-title": "Mes services",
         "service-web": "Site web",
         "service-mobile": "App mobile",
@@ -76,7 +78,7 @@
         "service-bot-messenger": "Bot Facebook Messenger",
         "service-api": "API Rest ou Graphql",
   
-        "project-title": "Mon Parcours",
+        "project-title": "Mes réalisations",
         "lifecycle-feed-analyse": "Analyse des besoins",
         "lifecycle-feed-planning": "Planification",
         "lifecycle-feed-design": "Conception de logiciels",

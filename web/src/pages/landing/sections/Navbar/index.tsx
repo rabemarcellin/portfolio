@@ -4,7 +4,7 @@ import { GrClose } from "react-icons/gr";
 import TextVisibilityContext from "../../../../store/contexts/TextVisibiltyContext";
 import AppContext from "../../../../store/contexts/AppContext";
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
-import SwitchLanguageDropdown from "../../../../components/SwitchLanguageDropdown";
+//import SwitchLanguageDropdown from "../../../../components/SwitchLanguageDropdown";
 import { useTranslation } from "../../../../../node_modules/react-i18next";
 
 
@@ -13,7 +13,7 @@ const styles = {
     dark:text-white dark:bg-slate-800 dark:border-slate-800  dark:shadow-black/50",
     header: "flex items-center justify-between p-4",
     nav: "flex gap-10 text-base items-center justify-around font-medium mx-2 text-gray-500 px-4 rounded-xl\
-    dark:bg-slate-800 dark:border-slate-800",
+    dark:bg-slate-800 dark:border-slate-800 p-2",
     navLink: "hover:text-black dark:text-white/75 dark:hover:text-white"
 }
 
@@ -69,11 +69,11 @@ export default function NavBar() {
                 filter: textVisibilityContext?.isInvisible ? 'invert(100%)': 'invert(0)'
               }}
             >
+              <a href="#parcours" className={styles.navLink}>{t("parcours-title")}</a>
               <a href="#skills" className={styles.navLink}>{t("skill-title")}</a>
               <a href="#project" className={styles.navLink}>{t("project-title")}</a>
-              <a href="#service" className={styles.navLink}>{t("service-title")}</a>
               <a href="#contact" className={styles.navLink}>{t("contact")}</a>
-              <SwitchLanguageDropdown center axe="top" />
+              {/* <SwitchLanguageDropdown center axe="top" /> */}
               <DarkModeSwitch
                 moonColor={'#FFF'}
                 sunColor={'#000'}
@@ -112,14 +112,14 @@ export default function NavBar() {
               <div className="flex-1">
                 <div className="flex h-full flex-col justify-between">
                   <div className="flex flex-col my-8 gap-4">
+                  <a href="#service" className={styles.navLink} onClick={() => setTogglerStatus(false)}>{t("parcours-title")}</a>
                     <a href="#skills" className={styles.navLink} onClick={() => setTogglerStatus(false)}>{t("skill-title")}</a>
                     <a href="#project" className={styles.navLink} onClick={() => setTogglerStatus(false)}>{t("project-title")}</a>
-                    <a href="#service" className={styles.navLink} onClick={() => setTogglerStatus(false)}>{t("service-title")}</a>
                     <a href="#contact" className={styles.navLink} onClick={() => setTogglerStatus(false)}>{t("contact")}</a>
                   </div>
-                  <div>
+                  {/* <div>
                     <SwitchLanguageDropdown center axe="top" />
-                  </div>
+                  </div> */}
                 </div>
                 
               </div>

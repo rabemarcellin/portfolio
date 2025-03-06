@@ -180,7 +180,7 @@ export default function Skills() {
           <p className="text-sm text-gray-600 dark:text-slate-100 leading-6">
             <ul className="list-disc list-inside">
               {topSkill.details.map((detail, index) => (
-                <li key={"top-skill-detail" + index}>{detail}</li>
+                <li key={"top-skill-detail" + index} className="font-title mb-2">{detail}</li>
               ))}
               
             </ul>

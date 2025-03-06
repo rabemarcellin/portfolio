@@ -43,7 +43,7 @@ export default function Project() {
                 }}
               >
                 <h1 className="font-bold text-lg md:text-xl">{project.name}</h1>
-                <p className="project__card__description">
+                <p className="project__card__description text-title">
                   {t(project.description)}
                 </p>
                 {project.website && (

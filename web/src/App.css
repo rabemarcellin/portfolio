@@ -4,8 +4,8 @@
 
 
 @theme {
-  --font-text:   "Open Sans", "Merriweather", "Ubuntu", "Montserrat", "Roboto", "Space Grotesk", "Poppins", "PT Sans", "sans-serif";
-  --font-title: "Source Code Pro" "serif";
+  --font-text:  "Kanit", "Noto Sans", "Ubuntu", "sans-serif";
+  --font-title: "Source Code Pro", "serif";
 }
 
 .text-title {

@@ -212,7 +212,7 @@ export default function Contact() {
 
   return (
     <div>
-      <div className="">
+      <div className="text-title">
         <div className="w-full relative">
           <form ref={form} onSubmit={sendEmail} onBlur={catchError}>
             <div className="grid gap-2">
@@ -248,7 +248,7 @@ export default function Contact() {
                   id="subject"
                   name="subject"
                   placeholder={t("message-object")}
-                  className="contact__input"
+                  className="contact__input font-text"
                   value={formState.inputs.subject}
                   onChange={updateInput}
                 />

@@ -72,7 +72,7 @@ const Parcours = () => {
             cardTitle: "IT Builder",
             url: "https://www.linkedin.com/company/itbmx",
             cardSubtitle:"Alternant Intégrateur web",
-            cardDetailedText: "Créer des interfaces web avec HTML et CSS / Intégrer la maquette Figma d'une application web sous Symphonie.",
+            cardDetailedText: "Créer des interfaces web avec HTML et CSS / Intégrer la maquette Figma d'une application web sous Symphony.",
             media: {
             type: "IMAGE",
             source: {
@@ -137,9 +137,9 @@ const Parcours = () => {
             </div>
 
             <div>
-                <h1 className='text-5xl font-bold my-4 hover:underline dark:border-slate-700 border-b pb-4 border-slate-300 dark:text-white'>Mon Parcours</h1>
+                <h1 className='text-5xl font-bold my-4 hover:underline dark:border-slate-700 border-b pb-4 border-slate-300 dark:text-white'>Mon parcours</h1>
             <Chrono items={items} disableToolbar mode="VERTICAL_ALTERNATING" classNames={{
-                    card: "dark:!bg-slate-800",
+                    card: "dark:!bg-slate-800 p-0!",
                     cardSubtitle: "dark:!text-white",
                     cardDetailedText: "text-base lg:text-lg font-light dark:!text-white",
                     cardMedia: "w-full h-full rounded-3xl",
