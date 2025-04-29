@@ -7,6 +7,48 @@ import EstiImg from "../../../../assets/img/esti.png"
 import UniversInfoImg from "../../../../assets/img/univers-informatique.png"
 import ITBuilderImg from "../../../../assets/img/it-builder.png"
 import ProgrammeSesameImg from "../../../../assets/img/programme-sesame.png"
+import DOMPurify from 'dompurify';
+
+const consteParcoursHtml = `
+<ul class="list-disc list-inside flex flex-col gap-4">
+    <li>Chargé de la maintenance et de l’implementation de nouvelle fonctionnalité sur la partie UI avec <strong><i>React/Typescript/Redux</i></strong> de <strong><u>myAuxilium</u></strong>. Un plateforme qui permet de travailler(en équipe ou solo) avec des agents IA sur ses documents.</li>
+    <li>Contribuer au développement du plateforme <strong><u>twisales</u></strong>, une application de VoIP Call Center faite avec <strong><i>nodejs</i></strong>.</li>
+</ul>
+`;
+
+const dmsnParcoursHtml = `
+<ul class="list-disc list-inside flex flex-col gap-4">
+    <li>Chargé de la création du système RAG, de la conception de son architecture à son développement, en utilisant <strong><i>Langchain</i></strong> avec <strong><i>Python</i></strong>, et <strong><i>LangFlow</i></strong>.</li>
+    <li>Création d’une application full no-code avec <strong><i>Bubble</i></strong>(UI) et <strong><i>Xano</i></strong>(Api) qui réalisé avec un bot Messenger que j’ai développé avec <strong><i>Python</i></strong> et <strong><i>Ampalibe</i></strong>.</li>
+</ul>
+`;
+
+
+const lcomParcoursHtml = `
+<ul class="list-disc list-inside flex flex-col gap-4">
+    <li>Chargé du développement d’un plateforme web sécurisé avec <strong><i>React/Redux</i></strong> alimenté par un api <strong><i>Laravel</i></strong>, en étroite collaboration avec le chef du projet et l’équipe du backend.</li>
+</ul>
+`;
+
+const iTeamParcoursHtml = `
+<p class="font-bold mb-2"><i>Thème: Challenger les applications de transferts existantes (ex: challenger Xender)</i></p>
+<p class="mb-2">Développement de solution logiciel permettant de transferer des fichiers et les récuperer sur differentes plateformes. Facebook Messenger, sur application mobile ou sur le site web.</p>
+<p class="mb-2"><u>Assignation:</u> Gestion d’upload et download des fichiers.</p>
+`;
+
+const itBuilderParcoursHtml = `
+Creation d’interface UI conforme à la maquette dans un projet Symphony.
+`;
+
+const universInfoParcoursHtml = `
+<ul class="list-disc list-inside flex flex-col gap-4">
+    <li>Effectuer une stage de découverte dans la centre de formation en information et gestion <strong>Univers Informatique</strong>. Suivi de cours en algorithme.</li>
+    <li>En tant qu'aide-formateur, accompagner des élèves en informatique bureautique et en programmation de site web statique avec HTML/CSS.</li>
+</ul>
+`;
+
+
+
 
 import "./parcours.css"
 import Linked from "../../../../components/Linked";
@@ -18,8 +60,9 @@ const Parcours = () => {
             cardTitle: "Constellation Group",
             url: "https://constellation-group.co",
             cardSubtitle:"Développeur React/Typescript",
-            cardDetailedText:`Travaille en tant que Développeur full stack, principalement sur l'interface graphique(front-end)
-            d'une plateforme web du nom de MyAuxilium qui combine à la fois l'IA Générative et la gestion de compte client personnel ou équipes.`,
+            cardDetailedText: (
+                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(consteParcoursHtml) }} />
+            ),
             media: {
             type: "IMAGE",
             source: {
@@ -32,8 +75,9 @@ const Parcours = () => {
             cardTitle: "Dimension",
             // url: "#",
             cardSubtitle:"Développeur Full stack [Stage/Période d'essai]",
-            cardDetailedText: "Touché des plusieurs projets avec tes technologies différents: Une plateforme utile dans le domaine de récrutement avec les outils no-code Bubble pour l'interface grahique, et Xano pour la gestion des données, une API avec le language Python, OCR sur une image avec Javascript.\
-            Un bot facebook messenger qui permet de gérer les demandes de récrutement et de les envoyer à l'équipe de recrutement avec le framework python Ampalibe. Développement d'une RAG(Réponse Automatique Générative) avec l'IA OpenAI pour traiter les questions sur une ensemble de données(excel).",
+            cardDetailedText: (
+                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(dmsnParcoursHtml) }} />
+            ),
             media: {
             type: "IMAGE",
             source: {
@@ -46,7 +90,9 @@ const Parcours = () => {
             cardTitle: "LCOM",
             url: "https://lcom-corp.com",
             cardSubtitle:"Développeur React [Consultant]",
-            cardDetailedText: "Contribuer au développement d'une plateforme web développer avec React/Redux pour le suivie des activités des jeunes accompagnés par une ONG. En collaboration l'équipe du backend sous Laravel.",
+            cardDetailedText: (
+                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(lcomParcoursHtml) }} />
+            ),
             media: {
             type: "IMAGE",
             source: {
@@ -59,7 +105,9 @@ const Parcours = () => {
             cardTitle: "Iteam-$",
             url: "https://www.facebook.com/iTeam.Community-100083660835154/",
             cardSubtitle:"Membre",
-            cardDetailedText: "Membre de la communauté IT << iTeam-$ >>. Distinction: 2è prix à l'hackathon HUI(Hackaton-Inter-Universitaire) 2022.",
+            cardDetailedText: (
+                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(iTeamParcoursHtml) }} />
+            ),
             media: {
             type: "IMAGE",
             source: {
@@ -72,7 +120,9 @@ const Parcours = () => {
             cardTitle: "IT Builder",
             url: "https://www.linkedin.com/company/itbmx",
             cardSubtitle:"Alternant Intégrateur web",
-            cardDetailedText: "Créer des interfaces web avec HTML et CSS / Intégrer la maquette Figma d'une application web sous Symphony.",
+            cardDetailedText: (
+                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(itBuilderParcoursHtml) }} />
+            ),
             media: {
             type: "IMAGE",
             source: {
@@ -98,8 +148,9 @@ const Parcours = () => {
             cardTitle: "Univers Informatique",
             url: "https://esti.mg",
             cardSubtitle:"Stage de découverte.",
-            cardDetailedText: "Effectuer une stage de découverte dans la centre de formation en information et gestion << Univers Informatique >>. Suivi de cours en algorithme.\
-            En tant qu'aide formateur, accompagner des élèves en informatique bureautique et en programmation de site web statique avec HTML/CSS.",
+            cardDetailedText: (
+                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(universInfoParcoursHtml) }} />
+            ),
             media: {
             type: "IMAGE",
             source: {

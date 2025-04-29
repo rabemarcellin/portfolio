@@ -21,7 +21,7 @@ section.timeline-card-content .card-description * {
 }
 
 section.timeline-card-content .card-description[aria-expanded="false"]::after {
-    @apply content-[''] absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-rc-gradient to-transparent;
+    @apply  absolute bottom-0 left-0 w-full h-24  bg-transparent hidden;
 }
 
 .dark section.timeline-card-content .card-description[aria-expanded="false"]::after {
