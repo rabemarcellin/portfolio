@@ -7,12 +7,19 @@ import EstiImg from "../../../../assets/img/esti.png"
 import UniversInfoImg from "../../../../assets/img/univers-informatique.png"
 import ITBuilderImg from "../../../../assets/img/it-builder.png"
 import ProgrammeSesameImg from "../../../../assets/img/programme-sesame.png"
+import ConnekiteoImg from "../../../../assets/img/connekiteo.png"
 import DOMPurify from 'dompurify';
 
 const consteParcoursHtml = `
 <ul class="list-disc list-inside flex flex-col gap-4">
     <li>Chargé de la maintenance et de l’implementation de nouvelle fonctionnalité sur la partie UI avec <strong><i>React/Typescript/Redux</i></strong> de <strong><u>myAuxilium</u></strong>. Un plateforme qui permet de travailler(en équipe ou solo) avec des agents IA sur ses documents.</li>
     <li>Contribuer au développement du plateforme <strong><u>twisales</u></strong>, une application de VoIP Call Center faite avec <strong><i>nodejs</i></strong>.</li>
+</ul>
+`;
+
+const connekiteoParcoursHtml = `
+<ul class="list-disc list-inside flex flex-col gap-4">
+    <li>Développement d’une plateforme de boost de publicité avec <strong><i>React.js</i></strong> et un backend <strong><i>FastAPI</i></strong>.</li>
 </ul>
 `;
 
@@ -67,6 +74,21 @@ const Parcours = () => {
             type: "IMAGE",
             source: {
                 url:ConstellationImg
+            }
+            }
+        },
+        {
+            title: "Juin 2025 - Juillet 2025",
+            cardTitle: "Connekiteo AI",
+            // url: "https://constellation-group.co",
+            cardSubtitle:"Développeur React/FastAPI",
+            cardDetailedText: (
+                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(connekiteoParcoursHtml) }} />
+            ),
+            media: {
+            type: "IMAGE",
+            source: {
+                url:ConnekiteoImg
             }
             }
         },
