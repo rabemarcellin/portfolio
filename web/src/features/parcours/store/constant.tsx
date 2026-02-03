@@ -275,8 +275,8 @@ export const PARCOURS = [
     {
         duration: "Octobre 2020 - Décembre 2020",
         company: "Univers Informatique",
-        website: "https://esti.mg",
-        position: "Stage de découverte.",
+        website: "https://www.facebook.com/profile.php?id=100082991029410",
+        position: "Stage de découverte",
         status: 6, // according to software life cycle index, see: src/datas/software-life-cycle.data.js,
         points: (
             <>

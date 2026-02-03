@@ -46,7 +46,8 @@ export default function LandingPageFooter() {
                   <ul className="flex gap-2 flex-wrap mb-20 md:mb-0">
                     <li className="footer__card__social footer__card__social--linkedin">
                       <a
-                        href="https://www.linkedin.com/in/marcellinrabe/"
+                        href="https://www.linkedin.com/in/marcellinrabedev/"
+                        target="_blank"
                         className="transition duration-300 flex gap-4 items-center justify-between"
                       >
                         

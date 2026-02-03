@@ -15,7 +15,7 @@ export const PROJECTS = [
         name: 'Twifone',
         description: "twifone-project-description",
         status: 6, // according to software life cycle index, see: src/datas/software-life-cycle.data.js,
-        website: 'https://twifone.come', // 
+        website: 'https://www.twifone.com', // 
         imagePreview: TwifoneImagePreview,
     },
     {
