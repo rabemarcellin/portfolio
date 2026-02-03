@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext, useRef } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { GrClose } from "react-icons/gr";
-import TextVisibilityContext from "@/store/contexts/TextVisibiltyContext";
+// import TextVisibilityContext from "@/store/contexts/TextVisibiltyContext";
 import AppContext from "@/store/contexts/AppContext";
 // import { DarkModeSwitch } from 'react-toggle-dark-mode';
 //import SwitchLanguageDropdown from "@/components/SwitchLanguageDropdown";
@@ -20,7 +20,7 @@ const styles = {
 export default function LandingPageNavbar() {
   const navbarRef = useRef<HTMLDivElement>(null)
   const [isTogglerActive, setTogglerStatus] = useState(false);
-  const textVisibilityContext = useContext(TextVisibilityContext)
+  // const textVisibilityContext = useContext(TextVisibilityContext)
   const { 
     setNavbarHeight, 
     // isDarkMode, toggleDarkMode 
@@ -49,7 +49,7 @@ export default function LandingPageNavbar() {
               href="#profile"
               className="logo"
               style={{
-                filter: textVisibilityContext?.isInvisible ? 'invert(100%)': 'invert(0)'
+                // filter: textVisibilityContext?.isInvisible ? 'invert(100%)': 'invert(0)'
               }}
             >
               M@R
@@ -68,9 +68,9 @@ export default function LandingPageNavbar() {
           <div className="hidden md:block">
             <nav 
               className={styles.nav}
-              style={{
-                filter: textVisibilityContext?.isInvisible ? 'invert(100%)': 'invert(0)'
-              }}
+              // style={{
+              //   // filter: textVisibilityContext?.isInvisible ? 'invert(100%)': 'invert(0)'
+              // }}
             >
               <a href="#parcours" className={styles.navLink}>{t("parcours-title")}</a>
               <a href="#skills" className={styles.navLink}>{t("skill-title")}</a>

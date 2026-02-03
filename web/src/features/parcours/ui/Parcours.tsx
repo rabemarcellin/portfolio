@@ -7,7 +7,6 @@
 // import { PARCOURS_ITEMS } from "../store/constant"
 // import { useEffect, useRef, useState } from "react";
 // import { useTranslation } from "react-i18next";
-// import { Waypoint } from "react-waypoint";
 
 // const Parcours = () => {
 //     const [currentParcours, setCurrentParcours] = useState(0);
