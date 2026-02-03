@@ -12,7 +12,7 @@ import Services from "@/features/services/ui/Services";
 
 export default function LandingPage() {
   const appContext = useContext(AppContext);
-  const isDarkMode = appContext ? appContext.isDarkMode : false;
+  const isDarkMode = appContext ? appContext.isDarkMode : true;
   return (
     <div className={isDarkMode ? "dark" : "light"}>
       <LandingPageNavbar />
