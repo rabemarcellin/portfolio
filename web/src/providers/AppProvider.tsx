@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TextVisibilityProvider from "./TextVisibilityProvider";
 import AppRouter from "../pages/routes/AppRouter";
 import AppContext from "../store/contexts/AppContext";
@@ -27,6 +27,14 @@ export const AppProvider = () => {
       return !state
   });
   };
+
+  useEffect(() => {
+    if(localStorage.getItem("darkmode") && localStorage.getItem("darkmode")?.trim() === "false") {
+      setDarkMode(true);
+      localStorage.setItem("darkmode", true.toString());
+    }
+   
+  }, [localStorage.getItem("darkmode")]);
 
   const value: AppContextType = {
     navbarHeight,
