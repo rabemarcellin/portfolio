@@ -70,8 +70,8 @@
         
         "service-title": "Mes services",
         "service-web": "Site web",
-        "service-mobile": "App mobile",
-        "service-bot": "Bot",
+        "service-mobile": "Application mobile",
+        "service-bot": "Robot de messagerie sur Facebook Messenger",
         "service-static-website": "Site vitrine attrayante",
         "service-managment-plateform": "Plateforme de gestion (utilisateurs, taches)",
         "service-app-nocode": "Application no code",
@@ -87,6 +87,9 @@
         "lifecycle-feed-deployment": "Déploiement",
         "lifecycle-feed-maintenance": "Maintenance",
         "nyanio-project-description": "Application gestion des tâches faite avec Reactjs et Redux tailwindcss.",
+        "myauxilium-project-description": "Plateforme alimentée par des agents IA qui aide des particuliers à travailler avec ses documents, solo ou en équipe.",
+        "markit-project-description": "Site vitrine d'un TPE de ventes et services numériques.",
+        "twifone-project-description": "Application de VoIP Call Center.",
         "didyfolo-project-description": "Site vitrine des 10 commandements de Dieu.",
         "toastapi-project-description": "Composant notification qui s'affiche temporairement à l'écran de l'utilisateur.",
         "archivebot-project-description": "Bot Facebook Messenger faite avec le framework ampalibe qui vous permet d'archiver des documents texte, par filtrer groupe/reference. Et vous permet de les retrouver plus tard à travers une filtre de recherche flexible(par mot clé sur le titre ou un mot clé dans l'ensemble des textes du documents même).",
@@ -97,7 +100,7 @@
         "email-address": "Adresse e-mail",
         "client-name": "Nom",
         "message-object": "Objet",
-        "client-message-placeholder": "Salut Marcellin,",
+        "client-message-placeholder": "Salut Marcellin 👋",
   
         "download-my-cv": "Télécharger mon CV"
       }

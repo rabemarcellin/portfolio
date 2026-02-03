@@ -1,5 +1,5 @@
 @reference "tailwindcss";
 
 .linked {
-    @apply dark:bg-slate-800 dark:text-white;
+    @apply dark:bg-neutral-950 dark:text-white;
 }

@@ -1,0 +1,58 @@
+
+.footer {
+    @apply shadow bg-white ;
+    @apply dark:bg-neutral-900 dark:shadow-black/50 dark:text-white;
+  }
+  .footer__contacts li {
+    @apply text-gray-500 hover:text-inherit;
+    @apply dark:text-white/50 dark:hover:text-white;
+  }
+  
+  .footer__card__social {
+    @apply bg-slate-100 hover:text-white border border-gray-400 rounded-full px-2 w-fit text-sm;
+    @apply dark:text-white;
+  }
+  
+  .footer__card__social--linkedin {
+    @apply hover:bg-[#0070B5];
+    @apply hover:border-[#0070B5];
+    @apply dark:bg-transparent dark:border-[#0070B5];
+  }
+  
+  .footer__card__social--facebook {
+    @apply hover:bg-[#4267B2];
+    @apply hover:border-[#4267B2];
+    @apply dark:bg-transparent dark:border-[#4267B2];
+  }
+  
+  .footer__card__social .social__name {
+    @apply text-xs text-gray-500;
+    @apply dark:text-white/75;
+  }
+  
+  .footer__card__social:hover .social__name {
+    @apply text-white/75;
+  }
+  .footer__card__social .icon {
+    width: 24px;
+    height: 24px;
+    @apply rounded-full;
+  }
+  .footer__card__social .icon.icon--linkedin {
+    @apply text-[#0070B5];
+    @apply dark:text-white dark:bg-[#0070B5];
+  }
+  
+  .footer__card__social .icon.icon--facebook {
+    @apply text-[#4267B2];
+    @apply dark:text-white dark:bg-[#4267B2];
+  }
+  
+  .footer__card__social:hover .icon.icon--linkedin {
+    @apply text-white bg-[#0070B5];
+  }
+  
+  .footer__card__social:hover .icon.icon--facebook {
+    @apply text-white bg-[#4267B2];
+  }
+  

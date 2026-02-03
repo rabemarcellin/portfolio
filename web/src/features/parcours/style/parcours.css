@@ -1,0 +1,30 @@
+@layer components {
+    .timeline-main-wrapper {
+      @apply p-0 scroll-smooth! overflow-visible!;
+    }
+  
+    section.timeline-card-content .card-sub-title {
+      @apply dark:text-white;
+    }
+  
+    section.timeline-card-content .card-description * {
+      @apply dark:text-gray-400 dark:hover:text-white/75 font-title leading-7;
+    }
+  
+    section.timeline-card-content
+      .card-description[aria-expanded="false"]::after {
+      @apply absolute bottom-0 left-0 w-full h-24  bg-transparent hidden;
+    }
+  
+    .dark
+      section.timeline-card-content
+      .card-description[aria-expanded="false"]::after {
+      @apply from-slate-800;
+    }
+  
+    section.timeline-card-content > *:last-child {
+      /* Styles pour le dernier enfant */
+      @apply dark:!bg-neutral-950;
+    }
+  }
+  

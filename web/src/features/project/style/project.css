@@ -1,0 +1,22 @@
+
+
+.project__dashboard {
+    @apply border shadow-lg relative h-screen overflow-y-auto overflow-x-hidden w-full bg-white  rounded-2xl px-4;
+    @apply dark:bg-neutral-950 dark:border-transparent;
+  }
+  
+  .project__dashboard__table {
+    @apply grid grid-cols-7 h-full sticky top-0 left-0 divide-x;
+    @apply divide-slate-800;
+  }
+  .project__card {
+    @apply my-8 mx-4 max-w-max p-4 hover:bg-white hover:scale-105  transition;
+    @apply duration-500 delay-200 border bg-slate-100 rounded-2xl;
+    @apply dark:bg-neutral-900 dark:shadow-black/50 dark:border-neutral-800 dark:hover:bg-neutral-950;
+  }
+  
+  .project__card__description {
+    @apply my-2 text-gray-500;
+    @apply dark:text-white/50;
+  }
+  

@@ -4,7 +4,7 @@ import { AppContextType } from "../../typescript/app.context";
 
 const AppContext = createContext<AppContextType>({
     navbarHeight: 0,
-    isDarkMode: false,
+    isDarkMode: true,
     setNavbarHeight: () => {},
     toggleDarkMode: () => {},
 });

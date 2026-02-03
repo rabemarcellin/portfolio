@@ -1,5 +1,5 @@
 import i18n from 'i18next'
-import { initReactI18next} from '../../../node_modules/react-i18next'
+import { initReactI18next} from 'react-i18next'
 import translationJSON from '../datas/language/translation.json'
 
 export const defaultLanguageCode = localStorage.getItem('lang') || "fr"

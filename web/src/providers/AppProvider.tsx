@@ -13,7 +13,7 @@ export const AppProvider = () => {
   if (darkMode) {
     whiteMode = JSON.parse(darkMode);
   } else {
-    localStorage.setItem("darkmode", false.toString());
+    localStorage.setItem("darkmode", true.toString());
   }
 
   const [isDarkMode, setDarkMode] = useState(whiteMode);
@@ -21,8 +21,9 @@ export const AppProvider = () => {
 
   const toggleDarkMode = () => {
     setDarkMode(state => {
-      const checked = !state
+      const checked = true; // !state
       localStorage.setItem("darkmode", checked.toString());
+      return true
       return !state
   });
   };
