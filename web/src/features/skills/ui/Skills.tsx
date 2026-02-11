@@ -241,7 +241,7 @@ export default function Skills() {
                     
               </div>
 
-              <div className="overflow-hidden skew-2 mt-10">
+              <div className="overflow-hidden mt-10">
                   <IDE codeSVG={demo.illustration}  />
                 </div>
             </div>
