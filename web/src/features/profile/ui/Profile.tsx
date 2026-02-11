@@ -1,7 +1,7 @@
 import { ReactSVG } from "react-svg";
 import { TypeAnimation } from 'react-type-animation';
 // import MeAsImg from "@/assets/img/rabemarcellin.png";
-import ProfileImg from "@/assets/img/profile.jpg";
+import ProfileImg from "@/assets/img/profile.jpeg";
 import BlobSvg from "@/assets/img/svg/blob.svg";
 import Linked from "@/components/Linked";
 import { useTranslation } from "react-i18next";
