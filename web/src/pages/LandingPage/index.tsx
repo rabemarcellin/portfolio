@@ -14,7 +14,7 @@ export default function LandingPage() {
   const appContext = useContext(AppContext);
   const isDarkMode = appContext ? appContext.isDarkMode : true;
   return (
-    <div className={isDarkMode ? "dark" : "light"}>
+    <div className={isDarkMode ? "dark" : "dark" /*light */}>
       <LandingPageNavbar />
       <Profile />
       <Project />
