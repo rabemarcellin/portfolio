@@ -160,7 +160,7 @@ export default function Skills() {
     <Linked id="skills" className="bg-slate-300 dark:bg-neutral-900! pb-10">
       <div>
         <div  className="max-w-5xl mx-auto px-4">
-        <h6 className="ttext-3xl my-4! font-medium text-title mb-2 text-2xl! md:my-8 dark:text-white">{t("skill-title") }</h6>
+        <h6 className=" my-4! font-medium text-title mb-2 text-2xl! md:my-8 dark:text-white">{t("skill-title") }</h6>
         <div className="grid md:grid-cols-2 gap-2">
           {myTopSkills.map((topSkill, index) => (
             <div key={"top-skill" + index} className="col-span-1 bg-white/75 dark:bg-neutral-800 rounded-xl dark:hover:bg-neutral-950 hover:bg-white shadow-sm dark:hover:shadow-white/10 hover:shadow-xl transition-shadow duration-300 p-4">

@@ -339,7 +339,7 @@ const Parcours = () => {
     return (
         <Linked id="project" className="py-4 md:py-8 dark:bg-neutral-950 overflow-hidden">
             <>
-            <h6 className="title font-medium! text-title text-2xl! md:title--center mb-4! md:mb-8! mx-auto max-w-5xl">
+            <h6 className="title font-medium! text-title text-2xl! md:title--center mb-4! md:mb-8! mx-auto max-w-5xl dark:text-white">
                 {t("project-title")}
             </h6>
 

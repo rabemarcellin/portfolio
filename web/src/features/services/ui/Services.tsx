@@ -8,9 +8,9 @@ export default function Services() {
   const { t } = useTranslation()
 
   return (
-    <Linked id="service">
-      <div className="max-w-5xl mx-auto px-4">
-        <h6 className="title text-title font-medium! md:title--center mb-8">{t("service-title")}</h6>
+    <Linked id="service" className="py-4 md:py-8 dark:bg-neutral-950 overflow-hidden">
+      <div className="max-w-5xl mx-auto px-4 ">
+        <h6 className="title text-title font-medium! md:title--center mb-8 text-2xl! dark:text-white">{t("service-title")}</h6>
         <div className="md:flex items-center relative">
           <div className="md:w-1/2 bg-transparent relative z-10">
             <div className="flex flex-wrap justify-center md:justify-normal gap-4">
